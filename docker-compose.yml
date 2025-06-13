@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  backend:
+    build: ./server
+    env_file: ./server/.env
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./server/src:/app/src
+      - ./server/.env:/app/.env
+
+  frontend:
+    build: ./client
+    env_file: ./client/.env
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    volumes:
+      - ./client/src:/app/src
+      - ./client/public:/app/public
+      - ./client/.env:/app/.env

@@ -4,4 +4,4 @@ COPY package*.json ./
 RUN npm ci --only=production
 COPY . .
 EXPOSE 4000
-CMD ["npx", "nodemon", "src/index.js"]
+CMD ["npm", "run", "dev"]

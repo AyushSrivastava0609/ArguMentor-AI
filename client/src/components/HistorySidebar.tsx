@@ -105,9 +105,19 @@ export default function HistorySidebar({
             </motion.button>
           </div>
 
+          {/* Debates Heading */}
+          <div className="px-5 py-3" data-oid="vxa:0.u">
+            <h2
+              className="text-sm font-semibold text-slate-300 uppercase tracking-wider"
+              data-oid="vpxr6su"
+            >
+              Your Debates
+            </h2>
+          </div>
+
           {/* Sessions List */}
-          <div className="flex-1 overflow-y-auto p-4" data-oid="ujdd-:j">
-            <AnimatePresence data-oid="6aq8.ao">
+          <div className="flex-1 overflow-y-auto px-4 py-1" data-oid="gy1ir1s">
+            <AnimatePresence data-oid=":eso0_2">
               {sessions.map((session, index) => (
                 <motion.div
                   key={session.id}
@@ -185,19 +195,6 @@ export default function HistorySidebar({
                           data-oid="zrqho7n"
                         >
                           {formatDate(session.date)}
-                        </span>
-                        <span
-                          className={`
-                          text-xs px-2 py-1 rounded-full
-                          ${
-                            session.mode === "voice"
-                              ? "bg-violet-500/20 text-violet-300"
-                              : "bg-cyan-500/20 text-cyan-300"
-                          }
-                        `}
-                          data-oid="c6gvt9z"
-                        >
-                          {session.mode}
                         </span>
                       </div>
                     </div>

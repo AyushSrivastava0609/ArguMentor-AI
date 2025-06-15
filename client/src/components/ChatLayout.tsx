@@ -50,35 +50,70 @@ export default function ChatLayout() {
   };
 
   const updateSession = (sessionId: string, updates: Partial<ChatSession>) => {
-    setSessions((prev) =>
-      prev.map((session) =>
+    console.log("Updating session:", sessionId, "with updates:", updates);
+
+    setSessions((prev) => {
+      const newSessions = prev.map((session) =>
         session.id === sessionId ? { ...session, ...updates } : session,
-      ),
-    );
-    if (currentSession?.id === sessionId) {
-      setCurrentSession((prev) => (prev ? { ...prev, ...updates } : null));
-    }
+      );
+      console.log("New sessions array:", newSessions);
+      return newSessions;
+    });
+
+    // Update current session immediately to ensure UI reflects changes
+    setCurrentSession((prev) => {
+      if (prev?.id === sessionId) {
+        const newSession = { ...prev, ...updates };
+        console.log("New current session:", newSession);
+        return newSession;
+      }
+      return prev;
+    });
   };
 
   const addMessage = (message: Omit<Message, "id" | "timestamp">) => {
-    if (!currentSession) return;
+    if (!currentSession) {
+      console.log("No current session, cannot add message");
+      return;
+    }
+
+    console.log("Adding message to session:", currentSession.id, message);
 
     const newMessage: Message = {
       ...message,
-      id: Date.now().toString(),
+      id: `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
       timestamp: new Date(),
     };
 
-    const updatedMessages = [...currentSession.messages, newMessage];
-    updateSession(currentSession.id, { messages: updatedMessages });
+    // Use functional update to ensure we're working with the latest state
+    setCurrentSession((prevSession) => {
+      if (!prevSession || prevSession.id !== currentSession.id) {
+        return prevSession;
+      }
 
-    // Update session title based on first user message
-    if (message.sender === "user" && currentSession.messages.length === 0) {
-      const title =
-        message.content.slice(0, 50) +
-        (message.content.length > 50 ? "..." : "");
-      updateSession(currentSession.id, { title });
-    }
+      const updatedMessages = [...prevSession.messages, newMessage];
+      console.log("Updated messages array:", updatedMessages);
+
+      const updatedSession = {
+        ...prevSession,
+        messages: updatedMessages,
+        // Update session title based on first user message
+        title:
+          message.sender === "user" && prevSession.messages.length === 0
+            ? message.content.slice(0, 50) +
+              (message.content.length > 50 ? "..." : "")
+            : prevSession.title,
+      };
+
+      // Also update the sessions array
+      setSessions((prevSessions) =>
+        prevSessions.map((session) =>
+          session.id === currentSession.id ? updatedSession : session,
+        ),
+      );
+
+      return updatedSession;
+    });
   };
 
   const handleNewDebateClick = () => {
@@ -93,7 +128,7 @@ export default function ChatLayout() {
   return (
     <div
       className="flex h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"
-      data-oid="fb:7rzz"
+      data-oid="jkj7wbk"
     >
       <HistorySidebar
         isOpen={sidebarOpen}
@@ -102,10 +137,10 @@ export default function ChatLayout() {
         currentSession={currentSession}
         onSessionSelect={setCurrentSession}
         onNewSession={handleNewDebateClick}
-        data-oid="amq9x_:"
+        data-oid="zxoyn70"
       />
 
-      <div className="flex-1 flex flex-col" data-oid="t8q_r_x">
+      <div className="flex-1 flex flex-col" data-oid=".y1vfwg">
         <ChatWindow
           session={currentSession}
           settings={
@@ -117,7 +152,7 @@ export default function ChatLayout() {
           }
           onAddMessage={addMessage}
           onNewSession={handleNewDebateClick}
-          data-oid="914qux0"
+          data-oid="n3_lf:2"
         />
       </div>
 
@@ -125,7 +160,7 @@ export default function ChatLayout() {
         isOpen={isNewDebateDialogOpen}
         onClose={() => setIsNewDebateDialogOpen(false)}
         onStartDebate={handleStartDebate}
-        data-oid="rqnld7u"
+        data-oid="_jlb10x"
       />
     </div>
   );

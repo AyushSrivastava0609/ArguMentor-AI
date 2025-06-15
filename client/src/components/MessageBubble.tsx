@@ -18,11 +18,11 @@ export default function MessageBubble({ message, isLast }: MessageBubbleProps) {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
       className={`flex ${isUser ? "justify-end" : "justify-start"} group`}
-      data-oid="c16j1lk"
+      data-oid="8k4u-dc"
     >
       <div
-        className={`flex items-start gap-4 max-w-[85%] ${isUser ? "flex-row-reverse" : "flex-row"}`}
-        data-oid="xdk500u"
+        className={`flex items-start gap-2 max-w-[85%] ${isUser ? "flex-row-reverse" : "flex-row"}`}
+        data-oid="-nnkimy"
       >
         {/* Enhanced Avatar */}
         <motion.div
@@ -34,8 +34,6 @@ export default function MessageBubble({ message, isLast }: MessageBubbleProps) {
                 : "bg-gradient-to-br from-violet-500 to-purple-600"
             }
           `}
-          whileHover={{ scale: 1.1, rotate: 5 }}
-          transition={{ duration: 0.2 }}
           data-oid="p524lz0"
         >
           {isUser ? (
@@ -49,14 +47,9 @@ export default function MessageBubble({ message, isLast }: MessageBubbleProps) {
         <motion.div
           className={`
             rounded-3xl px-6 py-4 shadow-xl backdrop-blur-sm relative
-            ${
-              isUser
-                ? "bg-gradient-to-br from-cyan-500 to-blue-600 text-white"
-                : "bg-slate-800/70 text-slate-100 border border-slate-700/50"
+            ${ "bg-slate-800/70 text-slate-100 border border-slate-700/50"
             }
           `}
-          whileHover={{ scale: 1.02 }}
-          transition={{ duration: 0.2 }}
           data-oid="9_hp3n8"
         >
           {/* Glow Effect */}
@@ -114,24 +107,12 @@ export default function MessageBubble({ message, isLast }: MessageBubbleProps) {
               className={`w-1 h-1 rounded-full ${isUser ? "bg-cyan-200" : "bg-slate-400"}`}
               data-oid="x4j5f7f"
             />
+
             {message.timestamp.toLocaleTimeString([], {
               hour: "2-digit",
               minute: "2-digit",
             })}
           </div>
-
-          {/* Message Tail */}
-          <div
-            className={`
-            absolute top-4 w-3 h-3 transform rotate-45
-            ${
-              isUser
-                ? "right-[-6px] bg-gradient-to-br from-cyan-500 to-blue-600"
-                : "left-[-6px] bg-slate-800/70 border-l border-t border-slate-700/50"
-            }
-          `}
-            data-oid="jelm0l_"
-          />
         </motion.div>
       </div>
     </motion.div>

@@ -68,11 +68,19 @@ export default function ChatWindow({
   };
 
   useEffect(() => {
+    console.log("Session messages changed:", session?.messages);
     scrollToBottom();
   }, [session?.messages]);
 
+  useEffect(() => {
+    console.log("Session changed:", session);
+  }, [session]);
+
   const handleSendMessage = async (content: string) => {
     if (!session || !content.trim()) return;
+
+    console.log("Sending message:", content.trim());
+    console.log("Current session before adding message:", session);
 
     // Add user message
     onAddMessage({
@@ -81,6 +89,9 @@ export default function ChatWindow({
     });
 
     setIsLoading(true);
+
+    // Add a small delay to ensure user message is rendered before API call
+    await new Promise((resolve) => setTimeout(resolve, 100));
 
     try {
       // Simulate API call
@@ -103,15 +114,17 @@ export default function ChatWindow({
       if (response.ok) {
         const data = await response.json();
 
-        // Add AI response
-        onAddMessage({
-          content:
-            data.response ||
-            "I understand your point. Let me offer a counterargument...",
-          sender: "ai",
-          principles:
-            settings.principles.length > 1 ? settings.principles : undefined,
-        });
+        // Add AI response after a small delay
+        setTimeout(() => {
+          onAddMessage({
+            content:
+              data.response ||
+              "I understand your point. Let me offer a counterargument...",
+            sender: "ai",
+            principles:
+              settings.principles.length > 1 ? settings.principles : undefined,
+          });
+        }, 50);
 
         // Text-to-speech for AI response
         if ("speechSynthesis" in window) {
@@ -128,12 +141,14 @@ export default function ChatWindow({
       }
     } catch (error) {
       console.error("Error sending message:", error);
-      // Add error message
-      onAddMessage({
-        content:
-          "I apologize, but I encountered an error. Let me try to respond to your argument anyway. Could you please rephrase your point?",
-        sender: "ai",
-      });
+      // Add error message after a small delay
+      setTimeout(() => {
+        onAddMessage({
+          content:
+            "I apologize, but I encountered an error. Let me try to respond to your argument anyway. Could you please rephrase your point?",
+          sender: "ai",
+        });
+      }, 50);
     } finally {
       setIsLoading(false);
     }
@@ -142,7 +157,7 @@ export default function ChatWindow({
   if (!session) {
     return (
       <div
-        className="flex-1 flex items-center justify-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden"
+        className="flex-1 flex items-center justify-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden overflow-x-auto"
         data-oid="aswvmws"
       >
         {/* Animated Background */}
@@ -420,20 +435,24 @@ export default function ChatWindow({
 
       {/* Messages Container */}
       <div
-        ref={messagesContainerRef}
-        onScroll={handleScroll}
-        className="flex-1 overflow-y-auto p-6 space-y-6 relative z-10"
-        data-oid="0sj:03h"
-      >
-        <AnimatePresence initial={false} data-oid="nf1gdji">
-          {session.messages.map((message, index) => (
-            <MessageBubble
-              key={message.id}
-              message={message}
-              isLast={index === session.messages.length - 1}
-              data-oid="uu46hke"
-            />
-          ))}
+       ref={messagesContainerRef}
+       onScroll={handleScroll}
+       className="flex-1 overflow-y-auto overflow-x-hidden p-6 space-y-6 relative z-10"
+       style={{ maxHeight: 'calc(100vh - 200px)' }}
+       data-oid="0nxjus0"
+     >
+        <AnimatePresence initial={false} data-oid="rssfcjm">
+          {session.messages.map((message, index) => {
+            console.log("Rendering message:", message, "Index:", index);
+            return (
+              <MessageBubble
+                key={message.id}
+                message={message}
+                isLast={index === session.messages.length - 1}
+                data-oid="poq9el3"
+              />
+            );
+          })}
         </AnimatePresence>
 
         {/* Enhanced Loading Indicator */}

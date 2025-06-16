@@ -53,9 +53,22 @@ export default function ChatWindow({
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const [showScrollButton, setShowScrollButton] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isUserScrolling, setIsUserScrolling] = useState(false);
+  const [shouldAutoScroll, setShouldAutoScroll] = useState(true);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout>();
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  const scrollToBottom = (smooth = true) => {
+    if (messagesContainerRef.current) {
+      const container = messagesContainerRef.current;
+      if (smooth) {
+        container.scrollTo({
+          top: container.scrollHeight,
+          behavior: "smooth",
+        });
+      } else {
+        container.scrollTop = container.scrollHeight;
+      }
+    }
   };
 
   const handleScroll = () => {
@@ -64,23 +77,64 @@ export default function ChatWindow({
     const { scrollTop, scrollHeight, clientHeight } =
       messagesContainerRef.current;
     const isNearBottom = scrollHeight - scrollTop - clientHeight < 100;
+
     setShowScrollButton(!isNearBottom && (session?.messages.length || 0) > 0);
+    setShouldAutoScroll(isNearBottom);
+
+    // Detect user scrolling
+    setIsUserScrolling(true);
+
+    // Clear existing timeout
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current);
+    }
+
+    // Reset user scrolling flag after scroll ends
+    scrollTimeoutRef.current = setTimeout(() => {
+      setIsUserScrolling(false);
+    }, 150);
   };
 
+  // Auto-scroll only when new messages arrive and user is at bottom
   useEffect(() => {
-    console.log("Session messages changed:", session?.messages);
-    scrollToBottom();
-  }, [session?.messages]);
+    if (session?.messages && shouldAutoScroll && !isUserScrolling) {
+      // Small delay to ensure message is rendered
+      const timeoutId = setTimeout(() => {
+        scrollToBottom(true);
+      }, 100);
 
+      return () => clearTimeout(timeoutId);
+    }
+  }, [session?.messages?.length, shouldAutoScroll, isUserScrolling]);
+
+  // Handle session changes
   useEffect(() => {
-    console.log("Session changed:", session);
-  }, [session]);
+    if (session?.id) {
+      // Reset scroll state for new session
+      setShouldAutoScroll(true);
+      setIsUserScrolling(false);
+
+      // Scroll to bottom for new session
+      setTimeout(() => {
+        scrollToBottom(false);
+      }, 50);
+    }
+  }, [session?.id]);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
+  }, []);
 
   const handleSendMessage = async (content: string) => {
     if (!session || !content.trim()) return;
 
-    console.log("Sending message:", content.trim());
-    console.log("Current session before adding message:", session);
+    // Ensure we're at bottom for new messages
+    setShouldAutoScroll(true);
 
     // Add user message
     onAddMessage({
@@ -89,9 +143,6 @@ export default function ChatWindow({
     });
 
     setIsLoading(true);
-
-    // Add a small delay to ensure user message is rendered before API call
-    await new Promise((resolve) => setTimeout(resolve, 100));
 
     try {
       // Simulate API call
@@ -114,17 +165,15 @@ export default function ChatWindow({
       if (response.ok) {
         const data = await response.json();
 
-        // Add AI response after a small delay
-        setTimeout(() => {
-          onAddMessage({
-            content:
-              data.response ||
-              "I understand your point. Let me offer a counterargument...",
-            sender: "ai",
-            principles:
-              settings.principles.length > 1 ? settings.principles : undefined,
-          });
-        }, 50);
+        // Add AI response
+        onAddMessage({
+          content:
+            data.response ||
+            "I understand your point. Let me offer a counterargument...",
+          sender: "ai",
+          principles:
+            settings.principles.length > 1 ? settings.principles : undefined,
+        });
 
         // Text-to-speech for AI response
         if ("speechSynthesis" in window) {
@@ -141,14 +190,11 @@ export default function ChatWindow({
       }
     } catch (error) {
       console.error("Error sending message:", error);
-      // Add error message after a small delay
-      setTimeout(() => {
-        onAddMessage({
-          content:
-            "I apologize, but I encountered an error. Let me try to respond to your argument anyway. Could you please rephrase your point?",
-          sender: "ai",
-        });
-      }, 50);
+      onAddMessage({
+        content:
+          "I apologize, but I encountered an error. Let me try to respond to your argument anyway. Could you please rephrase your point?",
+        sender: "ai",
+      });
     } finally {
       setIsLoading(false);
     }
@@ -357,7 +403,7 @@ export default function ChatWindow({
 
   return (
     <div
-      className="flex-1 flex flex-col bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative"
+      className="flex-1 flex flex-col bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative h-screen overflow-hidden"
       data-oid="pc6ueqp"
     >
       {/* Subtle Background Pattern */}
@@ -435,12 +481,12 @@ export default function ChatWindow({
 
       {/* Messages Container */}
       <div
-       ref={messagesContainerRef}
-       onScroll={handleScroll}
-       className="flex-1 overflow-y-auto overflow-x-hidden p-6 space-y-6 relative z-10"
-       style={{ maxHeight: 'calc(100vh - 200px)' }}
-       data-oid="0nxjus0"
-     >
+        ref={messagesContainerRef}
+        onScroll={handleScroll}
+        className="flex-1 chat-scroll overflow-x-hidden p-6 space-y-6 relative z-10 min-h-0"
+        style={{ maxHeight: "calc(100vh - 140px)" }}
+        data-oid="0nxjus0"
+      >
         <AnimatePresence initial={false} data-oid="rssfcjm">
           {session.messages.map((message, index) => {
             console.log("Rendering message:", message, "Index:", index);
@@ -491,8 +537,11 @@ export default function ChatWindow({
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
-            onClick={scrollToBottom}
-            className="absolute bottom-28 right-6 bg-slate-800/80 backdrop-blur-xl hover:bg-slate-700/80 text-white p-4 rounded-full shadow-xl transition-all duration-300 z-10 border border-slate-600/50 hover:border-cyan-500/50"
+            onClick={() => {
+              setShouldAutoScroll(true);
+              scrollToBottom(true);
+            }}
+            className="absolute bottom-28 right-2 bg-slate-800/80 backdrop-blur-xl hover:bg-slate-700/80 text-white p-4 rounded-full shadow-xl transition-all duration-300 z-10 border border-slate-600/50 hover:border-cyan-500/50"
             whileHover={{
               scale: 1.1,
               boxShadow: "0 10px 30px -5px rgba(6, 182, 212, 0.3)",
@@ -510,6 +559,7 @@ export default function ChatWindow({
         onSendMessage={handleSendMessage}
         mode={settings.mode}
         disabled={isLoading}
+        sessionId={session?.id}
         data-oid=".ob3x0z"
       />
     </div>

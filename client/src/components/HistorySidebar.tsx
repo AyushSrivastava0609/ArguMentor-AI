@@ -10,6 +10,7 @@ import {
   SparklesIcon,
 } from "@heroicons/react/24/outline";
 import { ChatSession } from "./ChatLayout";
+import Link from "next/link";
 
 interface HistorySidebarProps {
   isOpen: boolean;
@@ -78,10 +79,12 @@ export default function HistorySidebar({
                 className="w-10 h-10 bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-600 rounded-xl flex items-center justify-center mx-auto shadow-2xl"
                 data-oid=":tbslt4"
               >
-                <SparklesIcon
-                  className="w-6 h-6 text-white"
-                  data-oid="kbp2_bp"
-                />
+                <Link href="/" data-oid="ms24jiy">
+                  <SparklesIcon
+                    className="w-6 h-6 text-white"
+                    data-oid="kbp2_bp"
+                  />
+                </Link>
               </motion.div>
             </motion.div>
             <motion.button
@@ -127,7 +130,7 @@ export default function HistorySidebar({
                   transition={{ delay: index * 0.05 }}
                   onClick={() => onSessionSelect(session)}
                   className={`
-                    group cursor-pointer p-4 rounded-2xl mb-3 transition-all duration-300 relative overflow-hidden
+                    group cursor-pointer p-4 rounded-2xl mb-1 transition-all duration-300 relative overflow-hidden
                     ${
                       currentSession?.id === session.id
                         ? "bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 shadow-lg"

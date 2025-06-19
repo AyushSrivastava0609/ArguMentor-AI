@@ -8,7 +8,7 @@ const openai = new OpenAI({
 
 export async function generateChatResponse(messages) {
   const res = await openai.chat.completions.create({
-    model: "gpt-4.1",
+    model: "gpt-4.1-nano",
     messages,
     temperature: 0.7,
     top_p: 0.9

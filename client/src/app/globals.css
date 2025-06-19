@@ -42,8 +42,6 @@ body {
   min-height: 100vh;
 }
 
-=======
-
 /* Glassmorphism effect */
 .glass {
   background: rgba(255, 255, 255, 0.05);

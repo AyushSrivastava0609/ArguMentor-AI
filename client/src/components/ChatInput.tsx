@@ -1,14 +1,14 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import {
-  PaperAirplaneIcon,
   MicrophoneIcon,
+  PaperAirplaneIcon,
+  SparklesIcon,
   StopIcon,
   XMarkIcon,
-  SparklesIcon,
 } from "@heroicons/react/24/outline";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 interface ChatInputProps {
   onSendMessage: (message: string) => Promise<void>;
@@ -680,10 +680,6 @@ export default function ChatInput({
             interimTranscript += transcript;
           }
         }
-
-        if (finalTranscript) {
-          setMessage((prev) => prev + finalTranscript);
-        }
       };
 
       recognitionInstance.onaudiostart = () => {
@@ -717,12 +713,54 @@ export default function ChatInput({
     }
   }, []);
 
+  // Modify the useEffect that handles session changes
+  useEffect(() => {
+    if (sessionId) {
+      // Load the draft for the current session
+      const savedDraft = draftMessages[sessionId] || "";
+      setMessage(savedDraft);
+
+      // Reset textarea height and then adjust for the loaded content
+      if (textareaRef.current) {
+        textareaRef.current.style.height = "48px";
+        setTimeout(() => {
+          adjustTextareaHeight();
+        }, 0);
+      }
+    } else {
+      // No session, clear the message
+      setMessage("");
+      if (textareaRef.current) {
+        textareaRef.current.style.height = "48px";
+      }
+    }
+  }, [sessionId]); // Only depend on sessionId
+
+  // Save draft message whenever message changes
+  useEffect(() => {
+    if (sessionId) {
+      setDraftMessages((prev) => ({
+        ...prev,
+        [sessionId]: message,
+      }));
+    }
+  }, [message, sessionId]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (message.trim() && !disabled) {
       handleMessageFlow(message);
       setMessage("");
 
+      // Clear the draft for this session since message was sent
+      if (sessionId) {
+        setDraftMessages((prev) => ({
+          ...prev,
+          [sessionId]: "",
+        }));
+      }
+
+      // Reset textarea height after sending
       if (textareaRef.current) {
         textareaRef.current.style.height = "48px";
       }
@@ -827,7 +865,7 @@ export default function ChatInput({
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="Message ArguMentor..."
+              placeholder="Message ArguMentor AI..."
               className="w-full bg-slate-800/60 backdrop-blur-sm text-white placeholder-slate-400 rounded-3xl px-5 py-3 pr-14 resize-none focus:outline-none focus:bg-slate-800/80 transition-all duration-300 min-h-[48px] max-h-[100px] shadow-lg overflow-y-auto"
               rows={1}
               style={{ height: "48px" }}

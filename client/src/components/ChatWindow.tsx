@@ -1,15 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowDownIcon,
-  SparklesIcon,
   ArrowRightIcon,
+  SparklesIcon,
 } from "@heroicons/react/24/outline";
-import { ChatSession, Message, DebateSettings } from "./ChatLayout";
-import MessageBubble from "./MessageBubble";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import ChatInput from "./ChatInput";
+import { ChatSession, DebateSettings, Message } from "./ChatLayout";
+import MessageBubble from "./MessageBubble";
 
 interface ChatWindowProps {
   session: ChatSession | null;
@@ -94,6 +94,24 @@ export default function ChatWindow({
     }, 150);
   };
 
+  useEffect(() => {
+    if (session?.id && session.messages.length === 0) {
+      // Send initial message when a new empty session is created
+      const sendInitialMessage = async () => {
+        let initialMessage = "Hey, What's on your Mind Today ?";
+
+        onAddMessage({
+          content: initialMessage,
+          sender: "ai",
+          principles:
+            settings.principles.length > 1 ? settings.principles : undefined,
+        });
+      };
+
+      sendInitialMessage();
+    }
+  }, [session?.id]); // Depend on session ID to trigger only on new sessions
+
   // Auto-scroll only when new messages arrive and user is at bottom
   useEffect(() => {
     if (session?.messages && shouldAutoScroll && !isUserScrolling) {
@@ -128,6 +146,19 @@ export default function ChatWindow({
       }
     };
   }, []);
+
+  function loadVoices(): Promise<SpeechSynthesisVoice[]> {
+    return new Promise((resolve) => {
+      const voices = speechSynthesis.getVoices();
+      if (voices.length) {
+        resolve(voices);
+      } else {
+        speechSynthesis.onvoiceschanged = () => {
+          resolve(speechSynthesis.getVoices());
+        };
+      }
+    });
+  }
 
   const handleSendMessage = async (content: string) => {
     if (!session || !content.trim()) return;
@@ -172,27 +203,38 @@ export default function ChatWindow({
         });
 
         // Text-to-speech for AI response
-        if (settings.mode === "voice" && "speechSynthesis" in window) {
-          const utterance = new SpeechSynthesisUtterance(data.aiText);
-          utterance.rate = 1;
-          utterance.pitch = 1;
+        const speakAIResponse = async (text: string) => {
+          if (settings.mode !== "voice" || !("speechSynthesis" in window))
+            return;
 
-          // Add event handlers
-          utterance.onstart = () => {
-            // You can emit an event or use a callback here
-            window.dispatchEvent(new Event("speak"));
-          };
+          try {
+            const voices = await loadVoices();
 
-          utterance.onend = () => {
-            window.dispatchEvent(new Event("end"));
-          };
+            // Try to pick a female voice
+            const femaleVoice =
+              voices.find((v) =>
+                /(Google UK English Female|Google US English|Samantha|Jenny|Zira|Victoria|Susan)/i.test(
+                  v.name,
+                ),
+              ) || voices.find((v) => v.name.toLowerCase().includes("female"));
 
-          utterance.onerror = () => {
-            window.dispatchEvent(new Event("end"));
-          };
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.voice = femaleVoice || voices[0]; // fallback
+            utterance.rate = 0.95;
+            utterance.pitch = 1.05;
+            utterance.volume = 1.0;
 
-          speechSynthesis.speak(utterance);
-        }
+            utterance.onstart = () => window.dispatchEvent(new Event("speak"));
+            utterance.onend = () => window.dispatchEvent(new Event("end"));
+            utterance.onerror = () => window.dispatchEvent(new Event("end"));
+
+            speechSynthesis.cancel(); // prevent overlap
+            speechSynthesis.speak(utterance);
+          } catch (error) {
+            console.error("Error in voice synthesis:", error);
+          }
+        };
+        await speakAIResponse(data.aiText);
       } else {
         throw new Error("Failed to get response");
       }

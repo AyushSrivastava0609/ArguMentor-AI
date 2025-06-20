@@ -13,7 +13,7 @@ export async function chatController(req, res, next) {
 
     // Build system prompts
     const systemMessages = [
-      { role: 'system', content: 'You are ArguMentor‑AI, an expert debate coach and ethics analyst.' },
+      { role: 'system', content: 'You are ArguMentor‑AI, an expert debate coach and ethics analyst. The user will be debating - So keept the responses accurate and brief so that it makes the debate more engaging and interactive' },
       { role: 'system', content: `Debate Style: ${style}.` }
     ];
     if (selected.length > 0) {

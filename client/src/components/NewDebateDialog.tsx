@@ -5,11 +5,9 @@ import { Dialog, Transition, Listbox } from "@headlessui/react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   XMarkIcon,
-  ChevronDownIcon,
   CheckIcon,
   ChatBubbleLeftRightIcon,
   MicrophoneIcon,
-  AcademicCapIcon,
   SparklesIcon,
   ArrowRightIcon,
 } from "@heroicons/react/24/outline";
@@ -178,12 +176,12 @@ export default function NewDebateDialog({
   };
 
   return (
-    <Transition appear show={isOpen} as={Fragment} data-oid="r55-ywc">
+    <Transition appear show={isOpen} as={Fragment} data-oid="upx91tw">
       <Dialog
         as="div"
         className="relative z-50"
         onClose={handleClose}
-        data-oid="-k0blg_"
+        data-oid="gjyekr1"
       >
         <Transition.Child
           as={Fragment}
@@ -193,18 +191,18 @@ export default function NewDebateDialog({
           leave="ease-in duration-200"
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
-          data-oid="lof5q8x"
+          data-oid="dpcbzxi"
         >
           <div
             className="fixed inset-0 bg-black/50 backdrop-blur-sm"
-            data-oid="-4iisd2"
+            data-oid="25-3y5s"
           />
         </Transition.Child>
 
-        <div className="fixed inset-0 overflow-y-auto" data-oid="c6g1tfj">
+        <div className="fixed inset-0 overflow-y-auto" data-oid="kepr286">
           <div
             className="flex min-h-full items-center justify-center p-4 text-center"
-            data-oid="dh8aw:e"
+            data-oid="7pc2s-s"
           >
             <Transition.Child
               as={Fragment}
@@ -214,28 +212,28 @@ export default function NewDebateDialog({
               leave="ease-in duration-200"
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
-              data-oid="c2ajwtd"
+              data-oid="vgxrnyx"
             >
               <Dialog.Panel
                 className="w-full max-w-2xl transform overflow-hidden rounded-3xl bg-slate-800/90 backdrop-blur-xl p-8 text-left align-middle shadow-2xl transition-all border border-slate-700/50"
-                data-oid="8c9vjcs"
+                data-oid="..xcfug"
               >
                 {/* Header */}
                 <div
                   className="flex items-center justify-between mb-8"
-                  data-oid="9nbo0on"
+                  data-oid="ea4orw-"
                 >
                   <Dialog.Title
                     className="text-2xl font-bold text-white flex items-center gap-3"
-                    data-oid=".jb62hu"
+                    data-oid="cw-5cig"
                   >
                     <div
                       className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-violet-600 rounded-2xl flex items-center justify-center"
-                      data-oid="_5d38ym"
+                      data-oid="x-mf:yq"
                     >
                       <SparklesIcon
                         className="w-5 h-5 text-white"
-                        data-oid="9-y-oug"
+                        data-oid="pku4.7f"
                       />
                     </div>
                     Start New Debate
@@ -243,16 +241,16 @@ export default function NewDebateDialog({
                   <button
                     onClick={handleClose}
                     className="p-2 hover:bg-slate-700/50 rounded-xl transition-colors"
-                    data-oid="_br2v:e"
+                    data-oid="9pbkkvs"
                   >
                     <XMarkIcon
                       className="w-6 h-6 text-slate-400"
-                      data-oid="qkminxm"
+                      data-oid="kdimzxj"
                     />
                   </button>
                 </div>
 
-                <AnimatePresence mode="wait" data-oid="moj.9:m">
+                <AnimatePresence mode="wait" data-oid="v3ax9f_">
                   {step === 1 && (
                     <motion.div
                       key="step1"
@@ -260,19 +258,19 @@ export default function NewDebateDialog({
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -20 }}
                       transition={{ duration: 0.3 }}
-                      data-oid="zak7xh7"
+                      data-oid="aqt52-1"
                     >
                       {/* Step 1: Mode Selection */}
-                      <div className="mb-8" data-oid="8rtuh7s">
+                      <div className="mb-8" data-oid="qdrx:b2">
                         <h3
                           className="text-lg font-semibold text-white mb-4"
-                          data-oid="1syb5-5"
+                          data-oid="dydag1-"
                         >
                           Choose Your Debate Mode
                         </h3>
                         <div
                           className="grid grid-cols-1 md:grid-cols-2 gap-4"
-                          data-oid=":9sy7ee"
+                          data-oid="hzqm-wm"
                         >
                           <motion.button
                             onClick={() => setSelectedMode("text")}
@@ -283,7 +281,7 @@ export default function NewDebateDialog({
                             }`}
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            data-oid="k9ezkuc"
+                            data-oid="1n-r6uh"
                           >
                             <ChatBubbleLeftRightIcon
                               className={`w-8 h-8 mx-auto mb-3 ${
@@ -291,18 +289,18 @@ export default function NewDebateDialog({
                                   ? "text-cyan-400"
                                   : "text-slate-400"
                               }`}
-                              data-oid=":ajwf2a"
+                              data-oid="q-iy:xm"
                             />
 
                             <h4
                               className="font-semibold text-white mb-2"
-                              data-oid="vmt8-i9"
+                              data-oid="zb-bkds"
                             >
                               Text Debate
                             </h4>
                             <p
                               className="text-sm text-slate-400"
-                              data-oid="g57gt2h"
+                              data-oid="e4auor_"
                             >
                               Engage in thoughtful written debates with AI on
                               any topic
@@ -318,7 +316,7 @@ export default function NewDebateDialog({
                             }`}
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            data-oid="1vdhbcz"
+                            data-oid="zowjeoz"
                           >
                             <MicrophoneIcon
                               className={`w-8 h-8 mx-auto mb-3 ${
@@ -326,18 +324,18 @@ export default function NewDebateDialog({
                                   ? "text-violet-400"
                                   : "text-slate-400"
                               }`}
-                              data-oid="dyl10kc"
+                              data-oid="3cb2sq4"
                             />
 
                             <h4
                               className="font-semibold text-white mb-2"
-                              data-oid="ocluzbk"
+                              data-oid="srpm315"
                             >
                               Voice Debate
                             </h4>
                             <p
                               className="text-sm text-slate-400"
-                              data-oid="uz:vrv5"
+                              data-oid="swrbtla"
                             >
                               Have natural voice conversations and debates with
                               AI
@@ -347,18 +345,18 @@ export default function NewDebateDialog({
                       </div>
 
                       {/* Navigation */}
-                      <div className="flex justify-end" data-oid="vk3y38-">
+                      <div className="flex justify-end" data-oid="ylkg9nb">
                         <motion.button
                           onClick={() => setStep(2)}
                           className="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold px-6 py-3 rounded-2xl transition-all duration-300"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          data-oid="vs.k0e3"
+                          data-oid="j439q-l"
                         >
                           Next
                           <ArrowRightIcon
                             className="w-4 h-4"
-                            data-oid="mbwk38o"
+                            data-oid="7adc-bq"
                           />
                         </motion.button>
                       </div>
@@ -372,26 +370,26 @@ export default function NewDebateDialog({
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -20 }}
                       transition={{ duration: 0.3 }}
-                      data-oid="146-c:o"
+                      data-oid="ihalbic"
                     >
                       {/* Step 2: Style Selection */}
-                      <div className="mb-6" data-oid="2ap7n-s">
+                      <div className="mb-6" data-oid="wd7naht">
                         <h3
                           className="text-lg font-semibold text-white mb-3"
-                          data-oid=".wp88_n"
+                          data-oid="14-:v9n"
                         >
                           Select Debate Style
                         </h3>
                         <p
                           className="text-slate-400 text-sm mb-4"
-                          data-oid="-t75_63"
+                          data-oid="-71pgmr"
                         >
                           Choose your preferred argumentation approach
                         </p>
 
                         <div
                           className="space-y-2 max-h-48 overflow-y-auto p-1"
-                          data-oid="ifjry8m"
+                          data-oid="nb1fu:i"
                         >
                           {debateStyles.map((style) => (
                             <motion.button
@@ -404,11 +402,11 @@ export default function NewDebateDialog({
                               }`}
                               whileHover={{ scale: 1.01 }}
                               whileTap={{ scale: 0.99 }}
-                              data-oid="k7t3-z_"
+                              data-oid="yj9a2fo"
                             >
                               <div
                                 className="flex items-center gap-3"
-                                data-oid="c__kzyw"
+                                data-oid="boj241e"
                               >
                                 <div
                                   className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
@@ -416,28 +414,28 @@ export default function NewDebateDialog({
                                       ? "border-cyan-500 bg-cyan-500"
                                       : "border-slate-500"
                                   }`}
-                                  data-oid="txvhh1q"
+                                  data-oid="xz0r.km"
                                 >
                                   {selectedStyle.id === style.id && (
                                     <div
                                       className="w-2 h-2 bg-white rounded-full"
-                                      data-oid=".dxd57q"
+                                      data-oid="mdoim4u"
                                     />
                                   )}
                                 </div>
                                 <div
                                   className="flex-1 min-w-0"
-                                  data-oid="ia-mx6w"
+                                  data-oid="kgzv_0x"
                                 >
                                   <h4
                                     className="font-medium text-white text-sm"
-                                    data-oid="99hae.7"
+                                    data-oid="9oj0bxj"
                                   >
                                     {style.name}
                                   </h4>
                                   <p
                                     className="text-xs text-slate-400 truncate"
-                                    data-oid="jvqeyjb"
+                                    data-oid="5tr1o1p"
                                   >
                                     {style.description}
                                   </p>
@@ -449,13 +447,13 @@ export default function NewDebateDialog({
                       </div>
 
                       {/* Navigation */}
-                      <div className="flex justify-between" data-oid="p3pls8:">
+                      <div className="flex justify-between" data-oid=".08:c0j">
                         <motion.button
                           onClick={() => setStep(1)}
                           className="px-6 py-3 text-slate-400 hover:text-white transition-colors"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          data-oid="4sfyg5z"
+                          data-oid="82967yu"
                         >
                           Back
                         </motion.button>
@@ -464,12 +462,12 @@ export default function NewDebateDialog({
                           className="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold px-6 py-3 rounded-2xl transition-all duration-300"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          data-oid="hhhssss"
+                          data-oid="4qfjwe."
                         >
                           Next
                           <ArrowRightIcon
                             className="w-4 h-4"
-                            data-oid="jhgqp3j"
+                            data-oid="tx5jy17"
                           />
                         </motion.button>
                       </div>
@@ -483,19 +481,19 @@ export default function NewDebateDialog({
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -20 }}
                       transition={{ duration: 0.3 }}
-                      data-oid="jf_xdt:"
+                      data-oid="_4x0iot"
                     >
                       {/* Step 3: Ethics Selection */}
-                      <div className="mb-8" data-oid="y63b05f">
+                      <div className="mb-8" data-oid="qnbxscc">
                         <h3
                           className="text-lg font-semibold text-white mb-4"
-                          data-oid=":75gtpx"
+                          data-oid="_i.zi_s"
                         >
                           Choose Ethical Frameworks
                         </h3>
                         <p
                           className="text-slate-400 text-sm mb-6"
-                          data-oid="y7s8mi9"
+                          data-oid="tkulw.9"
                         >
                           Select one or more ethical perspectives for the AI to
                           consider
@@ -503,7 +501,7 @@ export default function NewDebateDialog({
 
                         <div
                           className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-64 overflow-y-auto p-1"
-                          data-oid="zbcf06i"
+                          data-oid="md.238_"
                         >
                           {ethicalPrinciples.map((principle) => (
                             <motion.button
@@ -518,11 +516,11 @@ export default function NewDebateDialog({
                               }`}
                               whileHover={{ scale: 1.02 }}
                               whileTap={{ scale: 0.98 }}
-                              data-oid="g5vrz_o"
+                              data-oid="fmob3f5"
                             >
                               <div
                                 className="flex items-start gap-3"
-                                data-oid="ttnrc2e"
+                                data-oid="g3ekmg8"
                               >
                                 <div
                                   className={`w-5 h-5 rounded-full border-2 flex items-center justify-center mt-0.5 ${
@@ -532,27 +530,27 @@ export default function NewDebateDialog({
                                       ? "border-cyan-500 bg-cyan-500"
                                       : "border-slate-500"
                                   }`}
-                                  data-oid="2fckrrb"
+                                  data-oid="u2hrdpk"
                                 >
                                   {selectedPrinciples.some(
                                     (p) => p.id === principle.id,
                                   ) && (
                                     <CheckIcon
                                       className="w-3 h-3 text-white"
-                                      data-oid="hx71uq3"
+                                      data-oid="huuploh"
                                     />
                                   )}
                                 </div>
-                                <div data-oid="uazxc-s">
+                                <div data-oid="..z75d2">
                                   <h4
                                     className="font-medium text-white"
-                                    data-oid="ixe42za"
+                                    data-oid="m0ngryr"
                                   >
                                     {principle.name}
                                   </h4>
                                   <p
                                     className="text-sm text-slate-400 mt-1"
-                                    data-oid="wdo_29j"
+                                    data-oid=".ne1n4j"
                                   >
                                     {principle.description}
                                   </p>
@@ -564,13 +562,13 @@ export default function NewDebateDialog({
                       </div>
 
                       {/* Navigation */}
-                      <div className="flex justify-between" data-oid="jw6m:-w">
+                      <div className="flex justify-between" data-oid="3blcnk2">
                         <motion.button
                           onClick={() => setStep(2)}
                           className="px-6 py-3 text-slate-400 hover:text-white transition-colors"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          data-oid="nndvxni"
+                          data-oid="slqz-8d"
                         >
                           Back
                         </motion.button>
@@ -583,12 +581,12 @@ export default function NewDebateDialog({
                               "0 10px 30px -5px rgba(6, 182, 212, 0.4)",
                           }}
                           whileTap={{ scale: 0.95 }}
-                          data-oid="mrqe-ef"
+                          data-oid="9eyn1d5"
                         >
                           Start Debate
                           <SparklesIcon
                             className="w-4 h-4"
-                            data-oid="4mf:.so"
+                            data-oid="l162n1m"
                           />
                         </motion.button>
                       </div>
@@ -599,7 +597,7 @@ export default function NewDebateDialog({
                 {/* Step Indicator */}
                 <div
                   className="flex justify-center mt-8 space-x-2"
-                  data-oid="jtsuun0"
+                  data-oid="l4dhi5f"
                 >
                   {[1, 2, 3].map((stepNumber) => (
                     <div
@@ -607,7 +605,7 @@ export default function NewDebateDialog({
                       className={`w-2 h-2 rounded-full transition-colors ${
                         step >= stepNumber ? "bg-cyan-500" : "bg-slate-600"
                       }`}
-                      data-oid="ukk9xx9"
+                      data-oid="7cpzd_p"
                     />
                   ))}
                 </div>

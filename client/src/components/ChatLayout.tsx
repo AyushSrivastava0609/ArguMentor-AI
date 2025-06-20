@@ -128,7 +128,7 @@ export default function ChatLayout() {
   return (
     <div
       className="flex h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"
-      data-oid="2xez3.j"
+      data-oid="brjy:oi"
     >
       <HistorySidebar
         isOpen={sidebarOpen}
@@ -137,10 +137,10 @@ export default function ChatLayout() {
         currentSession={currentSession}
         onSessionSelect={setCurrentSession}
         onNewSession={handleNewDebateClick}
-        data-oid="q-:rcmc"
+        data-oid="hs8s845"
       />
 
-      <div className="flex-1 flex flex-col" data-oid="d2t_w4j">
+      <div className="flex-1 flex flex-col" data-oid=":luftp.">
         <ChatWindow
           session={currentSession}
           settings={
@@ -152,7 +152,7 @@ export default function ChatLayout() {
           }
           onAddMessage={addMessage}
           onNewSession={handleNewDebateClick}
-          data-oid="akh.g.5"
+          data-oid=".-rmj3z"
         />
       </div>
 
@@ -160,7 +160,7 @@ export default function ChatLayout() {
         isOpen={isNewDebateDialogOpen}
         onClose={() => setIsNewDebateDialogOpen(false)}
         onStartDebate={handleStartDebate}
-        data-oid=".62b9nh"
+        data-oid="ju3lavi"
       />
     </div>
   );

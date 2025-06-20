@@ -55,47 +55,47 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
   };
 
   return (
-    <AnimatePresence data-oid="d4o5f-p">
+    <AnimatePresence data-oid=".og:j70">
       {isOpen && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center"
-          data-oid="98ma006"
+          data-oid="8zo07x7"
         >
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             className="bg-slate-800 rounded-2xl p-6 max-w-md w-full mx-4 relative"
-            data-oid="pqfxw8d"
+            data-oid=":r5a3au"
           >
             <button
               onClick={onClose}
               className="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors duration-200"
-              data-oid="45txp-j"
+              data-oid="l6d.xj7"
             >
-              <XMarkIcon className="w-6 h-6" data-oid="r3jd09a" />
+              <XMarkIcon className="w-6 h-6" data-oid="1ehya5a" />
             </button>
 
-            <div className="text-center" data-oid="02qlj4o">
+            <div className="text-center" data-oid="-x064kx">
               <h2
                 className="text-xl font-semibold text-white mb-4"
-                data-oid="vagc.73"
+                data-oid="vwvtr49"
               >
                 Voice Conversation
               </h2>
 
               <div
                 className="voice-visualization mb-8 h-48 flex items-center justify-center relative"
-                data-oid="zzvl_.w"
+                data-oid="vu2x7as"
               >
                 {/* Recording State - Modern Waveform */}
                 {isRecording && (
                   <div
                     className="relative flex items-center justify-center"
-                    data-oid="mjgdpk3"
+                    data-oid="p77q00p"
                   >
                     {/* Outer pulse ring */}
                     <motion.div
@@ -109,7 +109,7 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                         repeat: Infinity,
                         ease: "easeInOut",
                       }}
-                      data-oid="qvv-r2f"
+                      data-oid="nmbbng8"
                     />
 
                     {/* Middle pulse ring */}
@@ -125,7 +125,7 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                         ease: "easeInOut",
                         delay: 0.3,
                       }}
-                      data-oid="qxycn37"
+                      data-oid="nn7_doo"
                     />
 
                     {/* Central microphone icon with glow */}
@@ -143,22 +143,22 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                         repeat: Infinity,
                         ease: "easeInOut",
                       }}
-                      data-oid="-1nye1x"
+                      data-oid="2uraza1"
                     >
                       <MicrophoneIcon
                         className="w-8 h-8 text-white"
-                        data-oid="ox8rsrm"
+                        data-oid="yh41xsw"
                       />
                     </motion.div>
 
                     {/* Dynamic waveform bars */}
                     <div
                       className="absolute top-28 left-1/2 transform -translate-x-1/2"
-                      data-oid="72l47ip"
+                      data-oid="xz.bo94"
                     >
                       <div
                         className="flex items-center gap-1"
-                        data-oid="m4mzvnn"
+                        data-oid="1po7w.j"
                       >
                         {[...Array(7)].map((_, i) => (
                           <motion.div
@@ -174,7 +174,7 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                               delay: i * 0.1,
                               ease: "easeInOut",
                             }}
-                            data-oid=".jgpb2-"
+                            data-oid="3wk7hfh"
                           />
                         ))}
                       </div>
@@ -186,7 +186,7 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                 {isSpeaking && (
                   <div
                     className="relative flex items-center justify-center"
-                    data-oid="-2-l2qu"
+                    data-oid=":1m:8ow"
                   >
                     {/* Animated sound waves */}
                     {[...Array(4)].map((_, i) => (
@@ -207,7 +207,7 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                           width: `${70 + i * 25}px`,
                           height: `${70 + i * 25}px`,
                         }}
-                        data-oid="55dae9l"
+                        data-oid="h70:qov"
                       />
                     ))}
 
@@ -227,22 +227,22 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                         repeat: Infinity,
                         ease: "easeInOut",
                       }}
-                      data-oid="lt1abi."
+                      data-oid="zvjk6.j"
                     >
                       <SparklesIcon
                         className="w-8 h-8 text-white"
-                        data-oid="k40qg4p"
+                        data-oid="kb.z08j"
                       />
                     </motion.div>
 
                     {/* Frequency bars */}
                     <div
                       className="absolute top-28 left-1/2 transform -translate-x-1/2"
-                      data-oid="qcp_ma5"
+                      data-oid="q1su14q"
                     >
                       <div
                         className="flex items-center gap-1"
-                        data-oid="adcvvaz"
+                        data-oid="wyrho:."
                       >
                         {[...Array(9)].map((_, i) => (
                           <motion.div
@@ -258,7 +258,7 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                               delay: i * 0.08,
                               ease: "easeInOut",
                             }}
-                            data-oid="2xch6re"
+                            data-oid="0lit19m"
                           />
                         ))}
                       </div>
@@ -270,7 +270,7 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                 {isProcessing && (
                   <div
                     className="relative flex items-center justify-center"
-                    data-oid="kenfvlv"
+                    data-oid="tuw__:r"
                   >
                     {/* Rotating gradient ring */}
                     <motion.div
@@ -281,16 +281,16 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                         repeat: Infinity,
                         ease: "linear",
                       }}
-                      data-oid="m1op2rz"
+                      data-oid="yx17:ve"
                     >
                       <div
                         className="absolute inset-0 rounded-full bg-gradient-to-r from-violet-400 via-purple-500 to-violet-400 opacity-20"
-                        data-oid="mx:q4_2"
+                        data-oid="c0iw7kn"
                       />
 
                       <div
                         className="absolute inset-1 rounded-full bg-slate-800"
-                        data-oid="-:7fy6i"
+                        data-oid="vby:tvk"
                       />
 
                       <div
@@ -299,7 +299,7 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                           background:
                             "conic-gradient(from 0deg, transparent 0deg, #8b5cf6 90deg, transparent 360deg)",
                         }}
-                        data-oid="smhjvqs"
+                        data-oid="7_cymy8"
                       />
                     </motion.div>
 
@@ -314,11 +314,11 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                         repeat: Infinity,
                         ease: "easeInOut",
                       }}
-                      data-oid="_g.enlu"
+                      data-oid=":lq0x_w"
                     >
                       <div
                         className="w-14 h-14 bg-gradient-to-br from-violet-400 to-purple-500 rounded-full flex items-center justify-center"
-                        data-oid="g31eztp"
+                        data-oid="m33ni:y"
                       >
                         <motion.div
                           animate={{ rotate: -360 }}
@@ -327,11 +327,11 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                             repeat: Infinity,
                             ease: "linear",
                           }}
-                          data-oid="b84bp5f"
+                          data-oid="3ma9s__"
                         >
                           <SparklesIcon
                             className="w-6 h-6 text-white"
-                            data-oid="-6uh:yy"
+                            data-oid="4y7ywyt"
                           />
                         </motion.div>
                       </div>
@@ -340,12 +340,12 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                     {/* Processing dots */}
                     <div
                       className="absolute inset-0 flex items-center justify-center"
-                      data-oid="49haq4r"
+                      data-oid="fdvun_i"
                     >
                       <div
                         className="flex items-center gap-1"
                         style={{ transform: "translateY(60px)" }}
-                        data-oid="6xrf.3k"
+                        data-oid="4.xlxht"
                       >
                         {[...Array(3)].map((_, i) => (
                           <motion.div
@@ -361,7 +361,7 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                               delay: i * 0.2,
                               ease: "easeInOut",
                             }}
-                            data-oid="xbz8rtq"
+                            data-oid="-grljl6"
                           />
                         ))}
                       </div>
@@ -373,7 +373,7 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                 {!isRecording && !isSpeaking && !isProcessing && (
                   <div
                     className="relative flex items-center justify-center"
-                    data-oid="02.iyxq"
+                    data-oid="kywh0_h"
                   >
                     {/* Subtle pulse ring */}
                     <motion.div
@@ -387,7 +387,7 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                         repeat: Infinity,
                         ease: "easeInOut",
                       }}
-                      data-oid="n:nbzfg"
+                      data-oid="6yhusn8"
                     />
 
                     <motion.div
@@ -400,29 +400,29 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                         repeat: Infinity,
                         ease: "easeInOut",
                       }}
-                      data-oid="f4n1w99"
+                      data-oid="71953cj"
                     >
                       <MicrophoneIcon
                         className="w-8 h-8 text-slate-300"
-                        data-oid="tc:yhyp"
+                        data-oid="vx7utfc"
                       />
                     </motion.div>
                   </div>
                 )}
               </div>
 
-              <p className="text-slate-300 mb-6 text-lg" data-oid=".6hd5n1">
+              <p className="text-slate-300 mb-6 text-lg" data-oid="4h70vql">
                 {getStatusText()}
               </p>
 
-              <div className="flex justify-center gap-6" data-oid="48ddb-j">
+              <div className="flex justify-center gap-6" data-oid="3i4jasw">
                 {isSpeaking ? (
                   <motion.button
                     onClick={interruptAI}
                     className="group relative px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 transition-all duration-300 text-white font-semibold shadow-lg overflow-hidden"
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    data-oid="qlbl1z1"
+                    data-oid="a0fqwn0"
                   >
                     {/* Animated background */}
                     <motion.div
@@ -435,19 +435,19 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                         ],
                       }}
                       transition={{ duration: 2, repeat: Infinity }}
-                      data-oid="35pfksr"
+                      data-oid="ukhnv0q"
                     />
 
                     <div
                       className="relative flex items-center gap-3"
-                      data-oid="4yr3qg8"
+                      data-oid="35mt8v3"
                     >
                       <motion.div
                         animate={{ rotate: [0, 10, -10, 0] }}
                         transition={{ duration: 0.5, repeat: Infinity }}
-                        data-oid="xdc3f-r"
+                        data-oid="racj-.g"
                       >
-                        <StopIcon className="w-5 h-5" data-oid="pln.hy9" />
+                        <StopIcon className="w-5 h-5" data-oid="3zv0k6e" />
                       </motion.div>
                       Interrupt AI
                     </div>
@@ -463,7 +463,7 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                     } ${isProcessing ? "opacity-50 cursor-not-allowed" : ""}`}
                     whileHover={!isProcessing ? { scale: 1.05, y: -2 } : {}}
                     whileTap={!isProcessing ? { scale: 0.95 } : {}}
-                    data-oid="305fv0:"
+                    data-oid="d:hyxxp"
                   >
                     {/* Animated background for active states */}
                     {(isRecording || !isProcessing) && (
@@ -485,21 +485,21 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                             : {}
                         }
                         transition={{ duration: 1.5, repeat: Infinity }}
-                        data-oid="odroktc"
+                        data-oid="l0q1y96"
                       />
                     )}
 
                     <div
                       className="relative flex items-center gap-3"
-                      data-oid="d:ohpia"
+                      data-oid="byxphjh"
                     >
                       {isRecording ? (
                         <motion.div
                           animate={{ scale: [1, 1.2, 1] }}
                           transition={{ duration: 1, repeat: Infinity }}
-                          data-oid="b2.17r2"
+                          data-oid="86tllzm"
                         >
-                          <StopIcon className="w-5 h-5" data-oid="y7ilvr0" />
+                          <StopIcon className="w-5 h-5" data-oid="xk7sv:b" />
                         </motion.div>
                       ) : (
                         <motion.div
@@ -512,11 +512,11 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                               : {}
                           }
                           transition={{ duration: 2, repeat: Infinity }}
-                          data-oid="a:_9-nm"
+                          data-oid="qck79:t"
                         >
                           <MicrophoneIcon
                             className="w-5 h-5"
-                            data-oid="74pi-rg"
+                            data-oid="coshcda"
                           />
                         </motion.div>
                       )}
@@ -536,7 +536,7 @@ const VoiceModal: React.FC<VoiceModalProps> = ({
                           repeat: Infinity,
                           ease: "easeOut",
                         }}
-                        data-oid="lc7ejha"
+                        data-oid="zxfeij1"
                       />
                     )}
                   </motion.button>
@@ -820,16 +820,16 @@ export default function ChatInput({
         toggleRecording={toggleRecording}
         stopSpeaking={stopSpeaking}
         interruptAI={interruptAI}
-        data-oid="b_31fz2"
+        data-oid="i2wqh3h"
       />
 
-      <div className="px-6 py-4 relative z-10 flex-shrink-0" data-oid="g2b_kea">
+      <div className="px-6 py-4 relative z-10 flex-shrink-0" data-oid="1n.7gmv">
         <form
           onSubmit={handleSubmit}
           className="flex items-center gap-3"
-          data-oid="7ileykn"
+          data-oid="t:v.51j"
         >
-          <AnimatePresence data-oid="q3mc910">
+          <AnimatePresence data-oid="mcqzy51">
             {mode === "voice" && (
               <motion.button
                 initial={{ opacity: 0, scale: 0.8, x: -20 }}
@@ -849,17 +849,17 @@ export default function ChatInput({
                 `}
                 whileHover={!disabled ? { scale: 1.05, y: -2 } : {}}
                 whileTap={!disabled ? { scale: 0.95 } : {}}
-                data-oid="0gdc_6c"
+                data-oid="l_lowdm"
               >
                 <MicrophoneIcon
                   className="w-5 h-5 text-white relative z-10"
-                  data-oid="j_iuf9-"
+                  data-oid="vhe.17c"
                 />
               </motion.button>
             )}
           </AnimatePresence>
 
-          <div className="flex-1 relative group" data-oid="9jmdfmy">
+          <div className="flex-1 relative group" data-oid="87ykvey">
             <textarea
               ref={textareaRef}
               value={message}
@@ -869,7 +869,7 @@ export default function ChatInput({
               className="w-full bg-slate-800/60 backdrop-blur-sm text-white placeholder-slate-400 rounded-3xl px-5 py-3 pr-14 resize-none focus:outline-none focus:bg-slate-800/80 transition-all duration-300 min-h-[48px] max-h-[100px] shadow-lg overflow-y-auto"
               rows={1}
               style={{ height: "48px" }}
-              data-oid="v.20y.k"
+              data-oid="2rwenye"
             />
           </div>
 
@@ -886,9 +886,9 @@ export default function ChatInput({
             `}
             whileHover={message.trim() && !disabled ? { scale: 1.1 } : {}}
             whileTap={message.trim() && !disabled ? { scale: 0.95 } : {}}
-            data-oid="qoaqoob"
+            data-oid="evwsqhz"
           >
-            <PaperAirplaneIcon className="w-4 h-4" data-oid="n--8hz6" />
+            <PaperAirplaneIcon className="w-4 h-4" data-oid="iv29tf5" />
           </motion.button>
         </form>
       </div>

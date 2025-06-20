@@ -38,7 +38,7 @@ const FloatingParticle = ({ delay = 0 }) => (
       delay,
       ease: "easeInOut",
     }}
-    data-oid="k8zalxy"
+    data-oid="nvd:zuq"
   />
 );
 
@@ -110,7 +110,7 @@ export default function ChatWindow({
 
       sendInitialMessage();
     }
-  }, [session?.id]); // Depend on session ID to trigger only on new sessions
+  }, [session?.id]);
 
   // Auto-scroll only when new messages arrive and user is at bottom
   useEffect(() => {
@@ -176,7 +176,7 @@ export default function ChatWindow({
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:4000"}/api/chat`,
+        `${process.env.NEXT_PUBLIC_API_BASE_URL || "https://argumentor-ai-production.up.railway.app"}/api/chat`,
         {
           method: "POST",
           headers: {
@@ -254,27 +254,27 @@ export default function ChatWindow({
     return (
       <div
         className="flex-1 flex items-center justify-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden overflow-x-auto"
-        data-oid="d5o_y0r"
+        data-oid="6mflagn"
       >
         {/* Animated Background */}
-        <div className="absolute inset-0" data-oid="ryq3gjs">
+        <div className="absolute inset-0" data-oid="jh.w7.g">
           {/* Grid Pattern */}
-          <div className="absolute inset-0 opacity-10" data-oid="7506:i.">
-            <svg className="absolute inset-0 w-full h-full" data-oid="d8h7l0r">
-              <defs data-oid=":6sten4">
+          <div className="absolute inset-0 opacity-10" data-oid="i7ndrj5">
+            <svg className="absolute inset-0 w-full h-full" data-oid="ockw1sg">
+              <defs data-oid="e-pu1y4">
                 <pattern
                   id="chat-grid"
                   width="40"
                   height="40"
                   patternUnits="userSpaceOnUse"
-                  data-oid="2o.plub"
+                  data-oid="loc8h76"
                 >
                   <path
                     d="M 40 0 L 0 0 0 40"
                     fill="none"
                     stroke="rgba(6, 182, 212, 0.2)"
                     strokeWidth="1"
-                    data-oid="mnsdtft"
+                    data-oid="61y-7_e"
                   />
                 </pattern>
               </defs>
@@ -282,14 +282,14 @@ export default function ChatWindow({
                 width="100%"
                 height="100%"
                 fill="url(#chat-grid)"
-                data-oid="dq.e:ep"
+                data-oid="aqq_egq"
               />
             </svg>
           </div>
 
           {/* Floating Particles */}
           {Array.from({ length: 20 }).map((_, i) => (
-            <FloatingParticle key={i} delay={i * 0.2} data-oid="atn9ykz" />
+            <FloatingParticle key={i} delay={i * 0.2} data-oid="hzpwf:o" />
           ))}
 
           {/* Gradient Orbs */}
@@ -300,7 +300,7 @@ export default function ChatWindow({
               opacity: [0.3, 0.5, 0.3],
             }}
             transition={{ duration: 8, repeat: Infinity }}
-            data-oid="xz3tztp"
+            data-oid="32scvlg"
           />
 
           <motion.div
@@ -310,7 +310,7 @@ export default function ChatWindow({
               opacity: [0.5, 0.3, 0.5],
             }}
             transition={{ duration: 8, repeat: Infinity, delay: 4 }}
-            data-oid="m2xgqk:"
+            data-oid="j9q.-z4"
           />
         </div>
 
@@ -320,7 +320,7 @@ export default function ChatWindow({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center relative z-10 max-w-md mx-auto px-6"
-          data-oid="_ti8h43"
+          data-oid="ym34hq2"
         >
           {/* Animated Logo */}
           <motion.div
@@ -334,7 +334,7 @@ export default function ChatWindow({
               damping: 20,
             }}
             className="relative mb-8"
-            data-oid="5an0::m"
+            data-oid="yh1woo7"
           >
             <motion.div
               className="w-20 h-20 bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-600 rounded-3xl flex items-center justify-center mx-auto shadow-2xl"
@@ -346,11 +346,11 @@ export default function ChatWindow({
                 ],
               }}
               transition={{ duration: 3, repeat: Infinity }}
-              data-oid="4unonjp"
+              data-oid="-zhou_u"
             >
               <SparklesIcon
                 className="w-10 h-10 text-white"
-                data-oid="u18z69p"
+                data-oid="n_ca0dn"
               />
             </motion.div>
           </motion.div>
@@ -361,12 +361,12 @@ export default function ChatWindow({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-2xl font-bold text-white mb-4"
-            data-oid="grosq-o"
+            data-oid="9byjm50"
           >
             Start a New{" "}
             <span
               className="bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent"
-              data-oid="l2d90a6"
+              data-oid="alm41m:"
             >
               Debate
             </span>
@@ -378,7 +378,7 @@ export default function ChatWindow({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-slate-400 mb-8 leading-relaxed"
-            data-oid="21oatyt"
+            data-oid="vvmvtpu"
           >
             Choose your debate mode and begin an engaging conversation with AI.
             Explore different perspectives and sharpen your argumentation
@@ -391,7 +391,7 @@ export default function ChatWindow({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             className="mb-8"
-            data-oid="0xt2-zi"
+            data-oid=":7.17ia"
           >
             <motion.button
               onClick={onNewSession}
@@ -401,11 +401,11 @@ export default function ChatWindow({
                 boxShadow: "0 20px 40px -12px rgba(6, 182, 212, 0.4)",
               }}
               whileTap={{ scale: 0.95 }}
-              data-oid="lud:7yh"
+              data-oid="5l.63m0"
             >
-              <SparklesIcon className="w-5 h-5" data-oid="kcwp4s1" />
+              <SparklesIcon className="w-5 h-5" data-oid="coxvrgh" />
               Start New Debate
-              <ArrowRightIcon className="w-5 h-5" data-oid="r7e:t._" />
+              <ArrowRightIcon className="w-5 h-5" data-oid="rky05gc" />
             </motion.button>
           </motion.div>
 
@@ -415,33 +415,33 @@ export default function ChatWindow({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
             className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm"
-            data-oid="vj-x2g5"
+            data-oid="mv_273r"
           >
             <div
               className="bg-slate-800/30 backdrop-blur-sm rounded-xl p-4 border border-slate-700/50"
-              data-oid="_udym6j"
+              data-oid="geoumag"
             >
               <div
                 className="text-cyan-400 font-semibold mb-1"
-                data-oid="v28saub"
+                data-oid="la6i_:s"
               >
                 💬 Text Mode
               </div>
-              <div className="text-slate-400" data-oid="qew1t6g">
+              <div className="text-slate-400" data-oid=".a:u90w">
                 Type your arguments
               </div>
             </div>
             <div
               className="bg-slate-800/30 backdrop-blur-sm rounded-xl p-4 border border-slate-700/50"
-              data-oid="wy1vv97"
+              data-oid="n6u0umd"
             >
               <div
                 className="text-violet-400 font-semibold mb-1"
-                data-oid="uoztm-r"
+                data-oid="xmjq8o_"
               >
                 🎤 Voice Mode
               </div>
-              <div className="text-slate-400" data-oid=".quujt0">
+              <div className="text-slate-400" data-oid="ch5ntvm">
                 Speak your thoughts
               </div>
             </div>
@@ -454,25 +454,25 @@ export default function ChatWindow({
   return (
     <div
       className="flex-1 flex flex-col bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative h-screen overflow-hidden"
-      data-oid="jrlhct4"
+      data-oid="_qli.mx"
     >
       {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 opacity-5" data-oid="w3pmgl2">
-        <svg className="absolute inset-0 w-full h-full" data-oid="_zr7l97">
-          <defs data-oid="lmcjcq-">
+      <div className="absolute inset-0 opacity-5" data-oid="t_jjti-">
+        <svg className="absolute inset-0 w-full h-full" data-oid="-8aui73">
+          <defs data-oid="wn-.t33">
             <pattern
               id="message-grid"
               width="30"
               height="30"
               patternUnits="userSpaceOnUse"
-              data-oid="mk1:8b3"
+              data-oid="ysttjx2"
             >
               <path
                 d="M 30 0 L 0 0 0 30"
                 fill="none"
                 stroke="rgba(6, 182, 212, 0.3)"
                 strokeWidth="1"
-                data-oid="7:keohw"
+                data-oid="w2pq-ed"
               />
             </pattern>
           </defs>
@@ -480,7 +480,7 @@ export default function ChatWindow({
             width="100%"
             height="100%"
             fill="url(#message-grid)"
-            data-oid="cluvjpm"
+            data-oid="l49ubaz"
           />
         </svg>
       </div>
@@ -488,16 +488,16 @@ export default function ChatWindow({
       {/* Chat Header */}
       <div
         className="border-b border-slate-700/50 bg-slate-800/30 backdrop-blur-xl px-6 py-3 relative z-10"
-        data-oid="y-_gr3q"
+        data-oid="1ytt7lv"
       >
-        <div className="flex flex-col gap-1" data-oid="tvqfhe6">
-          <h1 className="text-lg font-bold text-white" data-oid="610dcb6">
+        <div className="flex flex-col gap-1" data-oid="5twkvju">
+          <h1 className="text-lg font-bold text-white" data-oid="t.fman7">
             {session?.title || "ArguMentor-AI"}
           </h1>
           {session && (
             <div
               className="flex items-center gap-2 flex-wrap"
-              data-oid="a_x8dsl"
+              data-oid="_t-2l0."
             >
               <span
                 className={`text-xs px-2 py-1 rounded-full ${
@@ -505,13 +505,13 @@ export default function ChatWindow({
                     ? "bg-violet-500/20 text-violet-300"
                     : "bg-cyan-500/20 text-cyan-300"
                 }`}
-                data-oid="pt19fuw"
+                data-oid="amwqtic"
               >
                 {session.mode === "voice" ? "🎤 Voice" : "💬 Text"}
               </span>
               <span
                 className="text-xs px-2 py-1 rounded-full bg-slate-700/50 text-slate-300"
-                data-oid="e.mev1_"
+                data-oid="pdjqij0"
               >
                 {session.settings.style}
               </span>
@@ -519,7 +519,7 @@ export default function ChatWindow({
                 <span
                   key={principle}
                   className="text-xs px-2 py-1 rounded-full bg-orange-500/20 text-orange-300"
-                  data-oid="n7s8fhf"
+                  data-oid="v1nxg0r"
                 >
                   {principle}
                 </span>
@@ -535,9 +535,9 @@ export default function ChatWindow({
         onScroll={handleScroll}
         className="flex-1 chat-scroll overflow-x-hidden p-6 space-y-6 relative z-10 min-h-0"
         style={{ maxHeight: "calc(100vh - 140px)" }}
-        data-oid="ncpfrdg"
+        data-oid="nlunrn4"
       >
-        <AnimatePresence initial={false} data-oid="znwt5v8">
+        <AnimatePresence initial={false} data-oid="xw43teo">
           {session.messages.map((message, index) => {
             console.log("Rendering message:", message, "Index:", index);
             return (
@@ -545,7 +545,7 @@ export default function ChatWindow({
                 key={message.id}
                 message={message}
                 isLast={index === session.messages.length - 1}
-                data-oid="zh.uze_"
+                data-oid="dgyf3hd"
               />
             );
           })}
@@ -557,19 +557,19 @@ export default function ChatWindow({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="flex justify-start"
-            data-oid="0y9jud1"
+            data-oid="obft6r-"
           >
             <div
               className="bg-slate-800/50 backdrop-blur-xl rounded-3xl px-6 py-4 max-w-xs border border-slate-700/50"
-              data-oid="mitck82"
+              data-oid="2a6eaqg"
             >
-              <div className="flex items-center gap-3" data-oid="mp59t6t">
-                <div className="typing-indicator" data-oid="x001weg">
-                  <div className="typing-dot" data-oid="ng-hmc1"></div>
-                  <div className="typing-dot" data-oid="k9xzjpn"></div>
-                  <div className="typing-dot" data-oid="liips7a"></div>
+              <div className="flex items-center gap-3" data-oid="yhld537">
+                <div className="typing-indicator" data-oid="lm4874q">
+                  <div className="typing-dot" data-oid="zhhig0s"></div>
+                  <div className="typing-dot" data-oid="_-b2547"></div>
+                  <div className="typing-dot" data-oid="k6zsspe"></div>
                 </div>
-                <span className="text-slate-400 text-sm" data-oid="mdwjo6:">
+                <span className="text-slate-400 text-sm" data-oid="3pqdek1">
                   AI is thinking...
                 </span>
               </div>
@@ -577,11 +577,11 @@ export default function ChatWindow({
           </motion.div>
         )}
 
-        <div ref={messagesEndRef} data-oid="tz8aqzv" />
+        <div ref={messagesEndRef} data-oid="vv:xqxc" />
       </div>
 
       {/* Enhanced Scroll to Bottom Button */}
-      <AnimatePresence data-oid="9rtrwpr">
+      <AnimatePresence data-oid="0:1mkzq">
         {showScrollButton && (
           <motion.button
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -597,9 +597,9 @@ export default function ChatWindow({
               boxShadow: "0 10px 30px -5px rgba(6, 182, 212, 0.3)",
             }}
             whileTap={{ scale: 0.95 }}
-            data-oid="-a3dmp8"
+            data-oid="w.5yxzr"
           >
-            <ArrowDownIcon className="w-5 h-5" data-oid="qq_1p_z" />
+            <ArrowDownIcon className="w-5 h-5" data-oid="j796n2v" />
           </motion.button>
         )}
       </AnimatePresence>
@@ -610,7 +610,7 @@ export default function ChatWindow({
         mode={settings.mode}
         disabled={isLoading}
         sessionId={session?.id}
-        data-oid=":wok467"
+        data-oid="o2mfd67"
       />
     </div>
   );

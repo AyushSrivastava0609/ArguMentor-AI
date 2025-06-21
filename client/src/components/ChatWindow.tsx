@@ -38,7 +38,7 @@ const FloatingParticle = ({ delay = 0 }) => (
       delay,
       ease: "easeInOut",
     }}
-    data-oid="nvd:zuq"
+    data-oid="3-..nsn"
   />
 );
 
@@ -254,27 +254,27 @@ export default function ChatWindow({
     return (
       <div
         className="flex-1 flex items-center justify-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden overflow-x-auto"
-        data-oid="6mflagn"
+        data-oid="daaqzui"
       >
         {/* Animated Background */}
-        <div className="absolute inset-0" data-oid="jh.w7.g">
+        <div className="absolute inset-0" data-oid="4zqlaq_">
           {/* Grid Pattern */}
-          <div className="absolute inset-0 opacity-10" data-oid="i7ndrj5">
-            <svg className="absolute inset-0 w-full h-full" data-oid="ockw1sg">
-              <defs data-oid="e-pu1y4">
+          <div className="absolute inset-0 opacity-10" data-oid="9_ke_8q">
+            <svg className="absolute inset-0 w-full h-full" data-oid="0utrew0">
+              <defs data-oid="mq38a5j">
                 <pattern
                   id="chat-grid"
                   width="40"
                   height="40"
                   patternUnits="userSpaceOnUse"
-                  data-oid="loc8h76"
+                  data-oid=".w_mpx2"
                 >
                   <path
                     d="M 40 0 L 0 0 0 40"
                     fill="none"
                     stroke="rgba(6, 182, 212, 0.2)"
                     strokeWidth="1"
-                    data-oid="61y-7_e"
+                    data-oid="pv2ps7t"
                   />
                 </pattern>
               </defs>
@@ -282,14 +282,14 @@ export default function ChatWindow({
                 width="100%"
                 height="100%"
                 fill="url(#chat-grid)"
-                data-oid="aqq_egq"
+                data-oid="7c:iabj"
               />
             </svg>
           </div>
 
           {/* Floating Particles */}
           {Array.from({ length: 20 }).map((_, i) => (
-            <FloatingParticle key={i} delay={i * 0.2} data-oid="hzpwf:o" />
+            <FloatingParticle key={i} delay={i * 0.2} data-oid="k4p8zww" />
           ))}
 
           {/* Gradient Orbs */}
@@ -300,7 +300,7 @@ export default function ChatWindow({
               opacity: [0.3, 0.5, 0.3],
             }}
             transition={{ duration: 8, repeat: Infinity }}
-            data-oid="32scvlg"
+            data-oid="z7t3w-w"
           />
 
           <motion.div
@@ -310,7 +310,7 @@ export default function ChatWindow({
               opacity: [0.5, 0.3, 0.5],
             }}
             transition={{ duration: 8, repeat: Infinity, delay: 4 }}
-            data-oid="j9q.-z4"
+            data-oid="kw0i2tv"
           />
         </div>
 
@@ -319,8 +319,8 @@ export default function ChatWindow({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center relative z-10 max-w-md mx-auto px-6"
-          data-oid="ym34hq2"
+          className="text-center relative z-10 max-w-sm sm:max-w-md mx-auto px-4 sm:px-6"
+          data-oid="hcynytv"
         >
           {/* Animated Logo */}
           <motion.div
@@ -333,11 +333,11 @@ export default function ChatWindow({
               stiffness: 200,
               damping: 20,
             }}
-            className="relative mb-8"
-            data-oid="yh1woo7"
+            className="relative mb-6 sm:mb-8"
+            data-oid="u-5og:8"
           >
             <motion.div
-              className="w-20 h-20 bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-600 rounded-3xl flex items-center justify-center mx-auto shadow-2xl"
+              className="w-16 sm:w-20 h-16 sm:h-20 bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-600 rounded-3xl flex items-center justify-center mx-auto shadow-2xl"
               animate={{
                 boxShadow: [
                   "0 20px 40px -12px rgba(6, 182, 212, 0.3)",
@@ -346,11 +346,11 @@ export default function ChatWindow({
                 ],
               }}
               transition={{ duration: 3, repeat: Infinity }}
-              data-oid="-zhou_u"
+              data-oid="nbri4ep"
             >
               <SparklesIcon
-                className="w-10 h-10 text-white"
-                data-oid="n_ca0dn"
+                className="w-8 sm:w-10 h-8 sm:h-10 text-white"
+                data-oid="r_9j393"
               />
             </motion.div>
           </motion.div>
@@ -360,13 +360,13 @@ export default function ChatWindow({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-2xl font-bold text-white mb-4"
-            data-oid="9byjm50"
+            className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4"
+            data-oid="a8m-u_b"
           >
             Start a New{" "}
             <span
               className="bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent"
-              data-oid="alm41m:"
+              data-oid="ja0-gp4"
             >
               Debate
             </span>
@@ -377,8 +377,8 @@ export default function ChatWindow({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-slate-400 mb-8 leading-relaxed"
-            data-oid="vvmvtpu"
+            className="text-slate-400 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base"
+            data-oid="ki9y:tx"
           >
             Choose your debate mode and begin an engaging conversation with AI.
             Explore different perspectives and sharpen your argumentation
@@ -390,22 +390,28 @@ export default function ChatWindow({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="mb-8"
-            data-oid=":7.17ia"
+            className="mb-6 sm:mb-8"
+            data-oid="s2p89ub"
           >
             <motion.button
               onClick={onNewSession}
-              className="flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg mx-auto"
+              className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-2xl transition-all duration-300 shadow-lg mx-auto text-sm sm:text-base"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 20px 40px -12px rgba(6, 182, 212, 0.4)",
               }}
               whileTap={{ scale: 0.95 }}
-              data-oid="5l.63m0"
+              data-oid="ocd_g-t"
             >
-              <SparklesIcon className="w-5 h-5" data-oid="coxvrgh" />
+              <SparklesIcon
+                className="w-4 sm:w-5 h-4 sm:h-5"
+                data-oid="w1aa9y-"
+              />
               Start New Debate
-              <ArrowRightIcon className="w-5 h-5" data-oid="rky05gc" />
+              <ArrowRightIcon
+                className="w-4 sm:w-5 h-4 sm:h-5"
+                data-oid="n5eflcp"
+              />
             </motion.button>
           </motion.div>
 
@@ -414,34 +420,34 @@ export default function ChatWindow({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm"
-            data-oid="mv_273r"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm"
+            data-oid="ta1q06x"
           >
             <div
-              className="bg-slate-800/30 backdrop-blur-sm rounded-xl p-4 border border-slate-700/50"
-              data-oid="geoumag"
+              className="bg-slate-800/30 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-slate-700/50"
+              data-oid="set1uxa"
             >
               <div
                 className="text-cyan-400 font-semibold mb-1"
-                data-oid="la6i_:s"
+                data-oid="9.48rgh"
               >
                 💬 Text Mode
               </div>
-              <div className="text-slate-400" data-oid=".a:u90w">
+              <div className="text-slate-400" data-oid="bg7u4rn">
                 Type your arguments
               </div>
             </div>
             <div
-              className="bg-slate-800/30 backdrop-blur-sm rounded-xl p-4 border border-slate-700/50"
-              data-oid="n6u0umd"
+              className="bg-slate-800/30 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-slate-700/50"
+              data-oid="ju7:dsn"
             >
               <div
                 className="text-violet-400 font-semibold mb-1"
-                data-oid="xmjq8o_"
+                data-oid="5gn_b74"
               >
                 🎤 Voice Mode
               </div>
-              <div className="text-slate-400" data-oid="ch5ntvm">
+              <div className="text-slate-400" data-oid="gs4poay">
                 Speak your thoughts
               </div>
             </div>
@@ -454,25 +460,25 @@ export default function ChatWindow({
   return (
     <div
       className="flex-1 flex flex-col bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative h-screen overflow-hidden"
-      data-oid="_qli.mx"
+      data-oid="2sfov:e"
     >
       {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 opacity-5" data-oid="t_jjti-">
-        <svg className="absolute inset-0 w-full h-full" data-oid="-8aui73">
-          <defs data-oid="wn-.t33">
+      <div className="absolute inset-0 opacity-5" data-oid="1h5f2x4">
+        <svg className="absolute inset-0 w-full h-full" data-oid="b.7abfm">
+          <defs data-oid="zuaor0l">
             <pattern
               id="message-grid"
               width="30"
               height="30"
               patternUnits="userSpaceOnUse"
-              data-oid="ysttjx2"
+              data-oid="7xcv28h"
             >
               <path
                 d="M 30 0 L 0 0 0 30"
                 fill="none"
                 stroke="rgba(6, 182, 212, 0.3)"
                 strokeWidth="1"
-                data-oid="w2pq-ed"
+                data-oid="h8oa2tr"
               />
             </pattern>
           </defs>
@@ -480,24 +486,27 @@ export default function ChatWindow({
             width="100%"
             height="100%"
             fill="url(#message-grid)"
-            data-oid="l49ubaz"
+            data-oid="m.a:uei"
           />
         </svg>
       </div>
 
       {/* Chat Header */}
       <div
-        className="border-b border-slate-700/50 bg-slate-800/30 backdrop-blur-xl px-6 py-3 relative z-10"
-        data-oid="1ytt7lv"
+        className="border-b border-slate-700/50 bg-slate-800/30 backdrop-blur-xl px-4 sm:px-6 py-3 relative z-10"
+        data-oid="l3f1i96"
       >
-        <div className="flex flex-col gap-1" data-oid="5twkvju">
-          <h1 className="text-lg font-bold text-white" data-oid="t.fman7">
+        <div className="flex flex-col gap-1" data-oid="9s8b:r-">
+          <h1
+            className="text-base sm:text-lg font-bold text-white truncate"
+            data-oid="-3awr4."
+          >
             {session?.title || "ArguMentor-AI"}
           </h1>
           {session && (
             <div
-              className="flex items-center gap-2 flex-wrap"
-              data-oid="_t-2l0."
+              className="flex items-center gap-1 sm:gap-2 flex-wrap"
+              data-oid="0rtcp5k"
             >
               <span
                 className={`text-xs px-2 py-1 rounded-full ${
@@ -505,25 +514,33 @@ export default function ChatWindow({
                     ? "bg-violet-500/20 text-violet-300"
                     : "bg-cyan-500/20 text-cyan-300"
                 }`}
-                data-oid="amwqtic"
+                data-oid="4v4rr.a"
               >
                 {session.mode === "voice" ? "🎤 Voice" : "💬 Text"}
               </span>
               <span
-                className="text-xs px-2 py-1 rounded-full bg-slate-700/50 text-slate-300"
-                data-oid="pdjqij0"
+                className="text-xs px-2 py-1 rounded-full bg-slate-700/50 text-slate-300 truncate max-w-24 sm:max-w-none"
+                data-oid="x_4ols-"
               >
                 {session.settings.style}
               </span>
-              {session.settings.principles.map((principle) => (
+              {session.settings.principles.slice(0, 2).map((principle) => (
                 <span
                   key={principle}
-                  className="text-xs px-2 py-1 rounded-full bg-orange-500/20 text-orange-300"
-                  data-oid="v1nxg0r"
+                  className="text-xs px-2 py-1 rounded-full bg-orange-500/20 text-orange-300 truncate max-w-20 sm:max-w-none"
+                  data-oid="4.tkih1"
                 >
                   {principle}
                 </span>
               ))}
+              {session.settings.principles.length > 2 && (
+                <span
+                  className="text-xs px-2 py-1 rounded-full bg-slate-600/50 text-slate-400"
+                  data-oid=":axgipw"
+                >
+                  +{session.settings.principles.length - 2}
+                </span>
+              )}
             </div>
           )}
         </div>
@@ -533,11 +550,11 @@ export default function ChatWindow({
       <div
         ref={messagesContainerRef}
         onScroll={handleScroll}
-        className="flex-1 chat-scroll overflow-x-hidden p-6 space-y-6 relative z-10 min-h-0"
+        className="flex-1 chat-scroll overflow-x-hidden p-3 sm:p-6 space-y-4 sm:space-y-6 relative z-10 min-h-0"
         style={{ maxHeight: "calc(100vh - 140px)" }}
-        data-oid="nlunrn4"
+        data-oid="pds7crq"
       >
-        <AnimatePresence initial={false} data-oid="xw43teo">
+        <AnimatePresence initial={false} data-oid="50lvizn">
           {session.messages.map((message, index) => {
             console.log("Rendering message:", message, "Index:", index);
             return (
@@ -545,7 +562,7 @@ export default function ChatWindow({
                 key={message.id}
                 message={message}
                 isLast={index === session.messages.length - 1}
-                data-oid="dgyf3hd"
+                data-oid="k7i7zh7"
               />
             );
           })}
@@ -557,19 +574,25 @@ export default function ChatWindow({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="flex justify-start"
-            data-oid="obft6r-"
+            data-oid="_zxdug:"
           >
             <div
-              className="bg-slate-800/50 backdrop-blur-xl rounded-3xl px-6 py-4 max-w-xs border border-slate-700/50"
-              data-oid="2a6eaqg"
+              className="bg-slate-800/50 backdrop-blur-xl rounded-3xl px-4 sm:px-6 py-3 sm:py-4 max-w-xs border border-slate-700/50"
+              data-oid="b_j-6xw"
             >
-              <div className="flex items-center gap-3" data-oid="yhld537">
-                <div className="typing-indicator" data-oid="lm4874q">
-                  <div className="typing-dot" data-oid="zhhig0s"></div>
-                  <div className="typing-dot" data-oid="_-b2547"></div>
-                  <div className="typing-dot" data-oid="k6zsspe"></div>
+              <div
+                className="flex items-center gap-2 sm:gap-3"
+                data-oid="urtr3wd"
+              >
+                <div className="typing-indicator" data-oid="ahh1jg_">
+                  <div className="typing-dot" data-oid="lvj6krr"></div>
+                  <div className="typing-dot" data-oid="a2.6a3o"></div>
+                  <div className="typing-dot" data-oid="_xrftc2"></div>
                 </div>
-                <span className="text-slate-400 text-sm" data-oid="3pqdek1">
+                <span
+                  className="text-slate-400 text-xs sm:text-sm"
+                  data-oid="h8eqkn3"
+                >
                   AI is thinking...
                 </span>
               </div>
@@ -577,11 +600,11 @@ export default function ChatWindow({
           </motion.div>
         )}
 
-        <div ref={messagesEndRef} data-oid="vv:xqxc" />
+        <div ref={messagesEndRef} data-oid="p0z7.r2" />
       </div>
 
       {/* Enhanced Scroll to Bottom Button */}
-      <AnimatePresence data-oid="0:1mkzq">
+      <AnimatePresence data-oid="4nq1nyo">
         {showScrollButton && (
           <motion.button
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -591,15 +614,18 @@ export default function ChatWindow({
               setShouldAutoScroll(true);
               scrollToBottom(true);
             }}
-            className="absolute bottom-28 right-2 bg-slate-800/80 backdrop-blur-xl hover:bg-slate-700/80 text-white p-4 rounded-full shadow-xl transition-all duration-300 z-10 border border-slate-600/50 hover:border-cyan-500/50"
+            className="absolute bottom-20 sm:bottom-28 right-2 sm:right-4 bg-slate-800/80 backdrop-blur-xl hover:bg-slate-700/80 text-white p-3 sm:p-4 rounded-full shadow-xl transition-all duration-300 z-10 border border-slate-600/50 hover:border-cyan-500/50"
             whileHover={{
               scale: 1.1,
               boxShadow: "0 10px 30px -5px rgba(6, 182, 212, 0.3)",
             }}
             whileTap={{ scale: 0.95 }}
-            data-oid="w.5yxzr"
+            data-oid="_h:y9o6"
           >
-            <ArrowDownIcon className="w-5 h-5" data-oid="j796n2v" />
+            <ArrowDownIcon
+              className="w-4 sm:w-5 h-4 sm:h-5"
+              data-oid="mzia3aa"
+            />
           </motion.button>
         )}
       </AnimatePresence>
@@ -610,7 +636,7 @@ export default function ChatWindow({
         mode={settings.mode}
         disabled={isLoading}
         sessionId={session?.id}
-        data-oid="o2mfd67"
+        data-oid="92w:7-g"
       />
     </div>
   );

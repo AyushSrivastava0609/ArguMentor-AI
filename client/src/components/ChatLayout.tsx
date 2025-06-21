@@ -127,20 +127,10 @@ export default function ChatLayout() {
 
   return (
     <div
-      className="flex h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"
-      data-oid="brjy:oi"
+      className="flex h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 overflow-hidden"
+      data-oid="-cir_3:"
     >
-      <HistorySidebar
-        isOpen={sidebarOpen}
-        onToggle={() => setSidebarOpen(!sidebarOpen)}
-        sessions={sessions}
-        currentSession={currentSession}
-        onSessionSelect={setCurrentSession}
-        onNewSession={handleNewDebateClick}
-        data-oid="hs8s845"
-      />
-
-      <div className="flex-1 flex flex-col" data-oid=":luftp.">
+      <div className="flex-1 flex flex-col min-w-0" data-oid="x1012s3">
         <ChatWindow
           session={currentSession}
           settings={
@@ -152,7 +142,7 @@ export default function ChatLayout() {
           }
           onAddMessage={addMessage}
           onNewSession={handleNewDebateClick}
-          data-oid=".-rmj3z"
+          data-oid="rz3w_a."
         />
       </div>
 
@@ -160,7 +150,18 @@ export default function ChatLayout() {
         isOpen={isNewDebateDialogOpen}
         onClose={() => setIsNewDebateDialogOpen(false)}
         onStartDebate={handleStartDebate}
-        data-oid="ju3lavi"
+        data-oid="ifwptb4"
+      />
+
+      <HistorySidebar
+        isOpen={sidebarOpen}
+        onToggle={() => setSidebarOpen(!sidebarOpen)}
+        sessions={sessions}
+        currentSession={currentSession}
+        onSessionSelect={setCurrentSession}
+        onNewSession={handleNewDebateClick}
+        data-oid="ze5fsd3"
+        key="olk---dn"
       />
     </div>
   );

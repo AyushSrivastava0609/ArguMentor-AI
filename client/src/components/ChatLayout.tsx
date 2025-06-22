@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HistorySidebar from "./HistorySidebar";
 import ChatWindow from "./ChatWindow";
 import NewDebateDialog from "./NewDebateDialog";
@@ -29,7 +29,12 @@ export interface DebateSettings {
 }
 
 export default function ChatLayout() {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(() => {
+    if (window.innerWidth >= 1024) {
+      return true;
+    }
+    return false;
+  });
   const [currentSession, setCurrentSession] = useState<ChatSession | null>(
     null,
   );
@@ -128,9 +133,19 @@ export default function ChatLayout() {
   return (
     <div
       className="flex h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 overflow-hidden"
-      data-oid="-cir_3:"
+      data-oid="zph7ft0"
     >
-      <div className="flex-1 flex flex-col min-w-0" data-oid="x1012s3">
+      <HistorySidebar
+        isOpen={sidebarOpen}
+        onToggle={() => setSidebarOpen(!sidebarOpen)}
+        sessions={sessions}
+        currentSession={currentSession}
+        onSessionSelect={setCurrentSession}
+        onNewSession={handleNewDebateClick}
+        data-oid="k24zbv-"
+      />
+
+      <div className="flex-1 flex flex-col min-w-0" data-oid=":g7:hyo">
         <ChatWindow
           session={currentSession}
           settings={
@@ -142,7 +157,7 @@ export default function ChatLayout() {
           }
           onAddMessage={addMessage}
           onNewSession={handleNewDebateClick}
-          data-oid="rz3w_a."
+          data-oid="xoh8cai"
         />
       </div>
 
@@ -150,18 +165,7 @@ export default function ChatLayout() {
         isOpen={isNewDebateDialogOpen}
         onClose={() => setIsNewDebateDialogOpen(false)}
         onStartDebate={handleStartDebate}
-        data-oid="ifwptb4"
-      />
-
-      <HistorySidebar
-        isOpen={sidebarOpen}
-        onToggle={() => setSidebarOpen(!sidebarOpen)}
-        sessions={sessions}
-        currentSession={currentSession}
-        onSessionSelect={setCurrentSession}
-        onNewSession={handleNewDebateClick}
-        data-oid="ze5fsd3"
-        key="olk---dn"
+        data-oid="d8wkw84"
       />
     </div>
   );

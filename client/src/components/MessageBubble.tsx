@@ -18,11 +18,11 @@ export default function MessageBubble({ message, isLast }: MessageBubbleProps) {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
       className={`flex ${isUser ? "justify-end" : "justify-start"} group`}
-      data-oid="zpr9rfg"
+      data-oid="3p1noft"
     >
       <div
         className={`flex items-start gap-2 max-w-[85%] ${isUser ? "flex-row-reverse" : "flex-row"}`}
-        data-oid="aic32h."
+        data-oid="yq:.4nr"
       >
         {/* Enhanced Avatar */}
         <motion.div
@@ -34,12 +34,12 @@ export default function MessageBubble({ message, isLast }: MessageBubbleProps) {
                 : "bg-gradient-to-br from-violet-500 to-purple-600"
             }
           `}
-          data-oid="b6hxc_s"
+          data-oid="2e9ieth"
         >
           {isUser ? (
-            <UserIcon className="w-5 h-5 text-white" data-oid="st54k:g" />
+            <UserIcon className="w-5 h-5 text-white" data-oid="x_ea90o" />
           ) : (
-            <SparklesIcon className="w-5 h-5 text-white" data-oid="34a-fzg" />
+            <SparklesIcon className="w-5 h-5 text-white" data-oid="fdwm487" />
           )}
         </motion.div>
 
@@ -49,7 +49,7 @@ export default function MessageBubble({ message, isLast }: MessageBubbleProps) {
             rounded-3xl px-6 py-4 shadow-xl backdrop-blur-sm relative
             ${"bg-slate-800/70 text-slate-100 border border-slate-700/50"}
           `}
-          data-oid="mmfhh89"
+          data-oid="r2x5lbh"
         >
           {/* Glow Effect */}
           <div
@@ -61,23 +61,23 @@ export default function MessageBubble({ message, isLast }: MessageBubbleProps) {
                 : "bg-gradient-to-br from-violet-400 to-purple-500"
             }
           `}
-            data-oid="0c-i7wi"
+            data-oid="svf:r.y"
           />
 
           {/* Ethics Principles (for AI messages in ethics mode) */}
           {!isUser && message.principles && message.principles.length > 1 && (
             <div
               className="mb-4 pb-3 border-b border-slate-600/50"
-              data-oid="-r_1n::"
+              data-oid="lrqlywd"
             >
-              <div className="flex flex-wrap gap-2" data-oid="d.o:wg_">
+              <div className="flex flex-wrap gap-2" data-oid="9a_mznr">
                 {message.principles.map((principle) => (
                   <motion.span
                     key={principle}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     className="text-xs bg-gradient-to-r from-violet-500/20 to-purple-500/20 text-violet-300 px-3 py-1 rounded-full border border-violet-500/30 backdrop-blur-sm"
-                    data-oid="4f_-jju"
+                    data-oid=".i4opc."
                   >
                     {principle}
                   </motion.span>
@@ -89,7 +89,7 @@ export default function MessageBubble({ message, isLast }: MessageBubbleProps) {
           {/* Message Text */}
           <div
             className="text-sm leading-relaxed whitespace-pre-wrap"
-            data-oid="5488j5k"
+            data-oid="8kt8mi0"
           >
             {message.content}
           </div>
@@ -100,11 +100,11 @@ export default function MessageBubble({ message, isLast }: MessageBubbleProps) {
             text-xs mt-3 opacity-60 flex items-center gap-1
             ${isUser ? "text-cyan-100" : "text-slate-400"}
           `}
-            data-oid="hgrec.-"
+            data-oid="ou-m::h"
           >
             <div
               className={`w-1 h-1 rounded-full ${isUser ? "bg-cyan-200" : "bg-slate-400"}`}
-              data-oid="3kgtcn-"
+              data-oid="9gm9_d1"
             />
 
             {message.timestamp.toLocaleTimeString([], {

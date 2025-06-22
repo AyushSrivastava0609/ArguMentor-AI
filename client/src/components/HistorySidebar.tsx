@@ -45,7 +45,7 @@ export default function HistorySidebar({
   return (
     <>
       {/* Mobile Overlay */}
-      <AnimatePresence data-oid="dmph.hw">
+      <AnimatePresence data-oid="t:ane0v">
         {isOpen && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -53,7 +53,7 @@ export default function HistorySidebar({
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-black/50 z-40 lg:hidden"
             onClick={onToggle}
-            data-oid="pb_0n2n"
+            data-oid="6r5qlza"
           />
         )}
       </AnimatePresence>
@@ -74,27 +74,27 @@ export default function HistorySidebar({
                 ? "340px"
                 : "0px",
         }}
-        data-oid="l:a3cgh"
+        data-oid="ou0je1o"
       >
-        <div className="flex flex-col h-full" data-oid="sfgfn8_">
+        <div className="flex flex-col h-full" data-oid="dll296e">
           {/* Enhanced Header */}
           <div
             className="flex items-center justify-between p-5 "
-            data-oid="jisfybr"
+            data-oid="mvy1cdm"
           >
-            <motion.div className="relative" data-oid="7ovcpct">
+            <motion.div className="relative" data-oid="14deqez">
               <motion.div
                 className="w-10 sm:w-10 h-10 sm:h-10 bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-600 rounded-xl flex items-center justify-center shadow-2xl"
-                data-oid="3pdiiqo"
+                data-oid="g1haj0a"
               >
                 <Link
                   href="/"
                   className="flex items-center justify-center w-full h-full"
-                  data-oid="od4xoyb"
+                  data-oid="97rew-c"
                 >
                   <SparklesIcon
                     className="w-6 sm:w-6 h-6 sm:h-6 text-white"
-                    data-oid="cve:4cv"
+                    data-oid="vlq00y5"
                   />
                 </Link>
               </motion.div>
@@ -107,32 +107,32 @@ export default function HistorySidebar({
                 boxShadow: "0 10px 25px -5px rgba(6, 182, 212, 0.3)",
               }}
               whileTap={{ scale: 0.95 }}
-              data-oid="yzx7klh"
+              data-oid="ear5_c8"
             >
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                data-oid="ts4dz.7"
+                data-oid="3tct8_x"
               >
-                <SparklesIcon className="w-4 h-4" data-oid=".:rm05w" />
+                <SparklesIcon className="w-4 h-4" data-oid="gjlt9hw" />
               </motion.div>
               New Debate
             </motion.button>
           </div>
 
           {/* Debates Heading */}
-          <div className="px-5 py-3" data-oid="17l7i2t">
+          <div className="px-5 py-3" data-oid="2ugc5fc">
             <h2
               className="text-sm font-semibold text-slate-300 uppercase tracking-wider"
-              data-oid="n.xz1.r"
+              data-oid="1k7h-_h"
             >
               Your Debates
             </h2>
           </div>
 
           {/* Sessions List */}
-          <div className="flex-1 overflow-y-auto px-4 py-1" data-oid="r6ovtv.">
-            <AnimatePresence data-oid="1im2z_2">
+          <div className="flex-1 overflow-y-auto px-4 py-1" data-oid="7_pbtwt">
+            <AnimatePresence data-oid="nwfl.n_">
               {sessions.map((session, index) => (
                 <motion.div
                   key={session.id}
@@ -151,19 +151,19 @@ export default function HistorySidebar({
                   `}
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  data-oid="n30y5r."
+                  data-oid="ro3nwmc"
                 >
                   {/* Glow effect for active session */}
                   {currentSession?.id === session.id && (
                     <div
                       className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 rounded-2xl"
-                      data-oid="ck5-36-"
+                      data-oid="1wj3t3f"
                     />
                   )}
 
                   <div
                     className="flex items-start gap-3 relative z-10"
-                    data-oid="me9n_4."
+                    data-oid="q-xsh:y"
                   >
                     <div
                       className={`
@@ -174,40 +174,40 @@ export default function HistorySidebar({
                           : "bg-gradient-to-br from-cyan-500/20 to-blue-500/20"
                       }
                     `}
-                      data-oid="vfm9ge8"
+                      data-oid="z14jd-f"
                     >
                       {session.mode === "voice" ? (
                         <MicrophoneIcon
                           className="w-4 h-4 text-violet-400"
-                          data-oid="f.n1h8_"
+                          data-oid="pna85p."
                         />
                       ) : (
                         <ChatBubbleLeftIcon
                           className="w-4 h-4 text-cyan-400"
-                          data-oid="tnezpx5"
+                          data-oid="x5:x0f6"
                         />
                       )}
                     </div>
 
-                    <div className="flex-1 min-w-0" data-oid="r09r_kz">
+                    <div className="flex-1 min-w-0" data-oid="hr.913-">
                       <h3
                         className="text-sm font-semibold text-white truncate mb-1"
-                        data-oid="_jeog1z"
+                        data-oid="-4pdykz"
                       >
                         {session.title}
                       </h3>
                       <div
                         className="flex items-center gap-2"
-                        data-oid="xj2iwhc"
+                        data-oid="a05quv-"
                       >
                         <ClockIcon
                           className="w-3 h-3 text-slate-500"
-                          data-oid="5wshodo"
+                          data-oid="wyi-9xg"
                         />
 
                         <span
                           className="text-xs text-slate-500"
-                          data-oid="q0mnmxt"
+                          data-oid="e0572wp"
                         >
                           {formatDate(session.date)}
                         </span>
@@ -223,7 +223,7 @@ export default function HistorySidebar({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="text-center py-12"
-                data-oid=".xl9pxh"
+                data-oid="i4ir2f0"
               >
                 <motion.div
                   className="w-16 h-16 bg-gradient-to-br from-cyan-400/20 to-violet-500/20 rounded-3xl flex items-center justify-center mx-auto mb-4"
@@ -232,20 +232,20 @@ export default function HistorySidebar({
                     rotate: [0, 5, -5, 0],
                   }}
                   transition={{ duration: 4, repeat: Infinity }}
-                  data-oid="y.omon9"
+                  data-oid="__gwou_"
                 >
                   <SparklesIcon
                     className="w-8 h-8 text-slate-400"
-                    data-oid="-opi:on"
+                    data-oid="fk3n:vl"
                   />
                 </motion.div>
                 <h3
                   className="text-slate-400 text-sm font-medium mb-2"
-                  data-oid="3lwe.1k"
+                  data-oid="ezgmany"
                 >
                   No conversations yet
                 </h3>
-                <p className="text-slate-600 text-xs" data-oid="9w58ln-">
+                <p className="text-slate-600 text-xs" data-oid="afi0qap">
                   Start a new debate to begin your journey
                 </p>
               </motion.div>
@@ -255,7 +255,8 @@ export default function HistorySidebar({
       </motion.div>
 
       {/* Enhanced Toggle Button (when sidebar is closed) */}
-      <AnimatePresence data-oid="8-37r6d">
+      <AnimatePresence data-oid="x94m9p5">
+        Add commentMore actions
         {!isOpen && (
           <motion.button
             initial={{ opacity: 0, x: 20 }}
@@ -268,11 +269,11 @@ export default function HistorySidebar({
               boxShadow: "0 10px 30px -5px rgba(6, 182, 212, 0.3)",
             }}
             whileTap={{ scale: 0.95 }}
-            data-oid="ksfvb82"
+            data-oid="_5rx-zu"
           >
             <Bars3Icon
               className="w-4 sm:w-5 h-4 sm:h-5 text-slate-300"
-              data-oid="n_5:fqs"
+              data-oid=":8.caax"
             />
           </motion.button>
         )}
